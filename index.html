@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NJBL Design</title>
+    <link rel="shortcut icon" href="public/logo/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="testimonials.js"></script>
+    <script type="module" src="i18n.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#152441',
+                        accent: '#FD9314',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #152441;
+            overflow-x: hidden;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #152441 0%, #1a2d4d 100%);
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .animate-blink {
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        .swiper-pagination-bullet {
+            background: #9CA3AF;
+            opacity: 1;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #FD9314;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #FD9314;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .swiper-button-next {
+            right: -50px;
+        }
+
+        .swiper-button-prev {
+            left: -50px;
+        }
+
+        .portfolioSwiper {
+            padding-bottom: 50px;
+        }
+
+        #mobileMenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        #mobileMenu.active {
+            max-height: 300px;
+        }
+
+        #mobileMenuBtn svg {
+            transition: transform 0.3s ease;
+        }
+
+        #mobileMenuBtn.active svg {
+            transform: rotate(90deg);
+        }
+
+        @keyframes crossfade {
+
+            0%,
+            35.7% {
+                opacity: 1;
+            }
+
+            50%,
+            85.7% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .label-crossfade {
+            animation: crossfade 14s ease-in-out infinite;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #152441;
+            border: 1px solid #374151;
+            border-radius: 0.5rem;
+            padding: 0.5rem 0;
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: white;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(253, 147, 20, 0.1);
+            color: #FD9314;
+            padding-left: 2rem;
+        }
+
+        .mobile-dropdown-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding-left: 1rem;
+        }
+
+        .mobile-dropdown-menu.active {
+            max-height: 500px;
+        }
+
+        .mobile-dropdown-menu a {
+            display: block;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            color: #9CA3AF;
+        }
+
+        .mobile-dropdown-menu a:hover {
+            color: #FD9314;
+        }
+
+        /* Language dropdown styles */
+        .language-selector {
+            position: relative;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #152441;
+            border: 1px solid #374151;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+
+        .language-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            color: white;
+            transition: all 0.2s;
+            cursor: pointer;
+            border-radius: 0.375rem;
+        }
+
+        .language-option:hover {
+            background: rgba(253, 147, 20, 0.1);
+            color: #FD9314;
+        }
+
+        .language-option img {
+            width: 28px;
+            height: auto;
+        }
+
+        /* Hero section responsive improvements */
+        @media (max-width: 640px) {
+            #home {
+                min-height: 100vh;
+                min-height: -webkit-fill-available;
+            }
+            
+            #home .container {
+                padding-top: 5rem;
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 1079px) {
+            #home .container {
+                padding-top: 6rem;
+            }
+        }
+
+
+/* customizable snowflake styling */
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 0 5px #000;
+}
+ 
+.snowflake,.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}@keyframes snowflakes-fall{0%{transform:translateY(0)}100%{transform:translateY(110vh)}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;user-select:none;cursor:default;pointer-events:none;animation-name:snowflakes-shake;animation-duration:3s;animation-timing-function:ease-in-out}.snowflake .inner{animation-duration:10s;animation-name:snowflakes-fall;animation-timing-function:linear}.snowflake:nth-of-type(0){left:1%;animation-delay:0s}.snowflake:nth-of-type(0) .inner{animation-delay:0s}.snowflake:first-of-type{left:10%;animation-delay:1s}.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{animation-delay:1s}.snowflake:nth-of-type(2){left:20%;animation-delay:.5s}.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{animation-delay:6s}.snowflake:nth-of-type(3){left:30%;animation-delay:2s}.snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{animation-delay:4s}.snowflake:nth-of-type(4){left:40%;animation-delay:2s}.snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) .inner{animation-delay:2s}.snowflake:nth-of-type(5){left:50%;animation-delay:3s}.snowflake:nth-of-type(5) .inner{animation-delay:8s}.snowflake:nth-of-type(6){left:60%;animation-delay:2s}.snowflake:nth-of-type(7){left:70%;animation-delay:1s}.snowflake:nth-of-type(7) .inner{animation-delay:2.5s}.snowflake:nth-of-type(8){left:80%;animation-delay:0s}.snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}.snowflake:nth-of-type(9) .inner{animation-delay:3s}.snowflake:nth-of-type(10){left:25%;animation-delay:0s}.snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
+
+    </style>
+</head>
+
+<body class="text-white font-sans">
+    <div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+  <div class="snowflake">
+    <div class="inner">❅</div>
+  </div>
+</div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-primary border-b border-gray-700 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="public/logo/company Logo-01.png" alt="NJBL Design" class="h-14 md:h-16">
+                </div>
+
+                <!-- Desktop Navigation - Centered -->
+                <div class="hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2 text-xl">
+                    <a href="#home" class="hover:text-accent transition" data-i18n="nav.home">Home</a>
+                    <div class="dropdown">
+                        <button class="hover:text-accent transition flex items-center space-x-1">
+                            <span data-i18n="nav.services">Services</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#portfolio" data-i18n="services.label">Package Label Design</a>
+                            <a href="#portfolio" data-i18n="services.listing">Amazon Listing Design</a>
+                            <a href="#portfolio" data-i18n="services.ebc">Amazon EBC and A+ Premium Listing</a>
+                            <a href="#portfolio" data-i18n="services.ppc">Amazon PPC Management Optimization</a>
+                            <a href="#portfolio" data-i18n="services.setup">Product Setup</a>
+                            <a href="#portfolio" data-i18n="services.optimization">Listing Optimization</a>
+                            <a href="#portfolio" data-i18n="services.storefront">Storefront Maintenance</a>
+                        </div>
+                    </div>
+                    <a href="#about" class="hover:text-accent transition" data-i18n="nav.about">About</a>
+                    <a href="#" class="hover:text-accent transition" data-i18n="nav.contact" onclick="openOrderModal(event)">Contact</a>
+                </div>
+
+                <!-- Language Button -->
+                <div class="hidden md:flex items-center language-selector">
+                    <button class="language-button flex items-center space-x-2 hover:opacity-80 transition" onclick="toggleLanguageDropdown(event)">
+                        <img src="https://flagcdn.com/w40/us.png" alt="English" class="h-6 w-auto rounded shadow-sm">
+                    </button>
+                    <div class="language-dropdown">
+                        <div class="language-option" onclick="changeLanguage('en')">
+                            <img src="https://flagcdn.com/w40/us.png" alt="English" class="rounded shadow-sm">
+                            <span>English</span>
+                        </div>
+                        <div class="language-option" onclick="changeLanguage('de')">
+                            <img src="https://flagcdn.com/w40/de.png" alt="Deutsch" class="rounded shadow-sm">
+                            <span>Deutsch</span>
+                        </div>
+                        <div class="language-option" onclick="changeLanguage('fr')">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="rounded shadow-sm">
+                            <span>Français</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-white z-50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden">
+                <div class="flex flex-col space-y-4 pt-4 pb-2">
+                    <a href="#home" class="hover:text-accent transition" data-i18n="nav.home">Home</a>
+                    <div>
+                        <button id="mobileServicesBtn" class="hover:text-accent transition flex items-center justify-between w-full">
+                            <span data-i18n="nav.services">Services</span>
+                            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobileServicesMenu" class="mobile-dropdown-menu">
+                            <a href="#portfolio" data-i18n="services.label">Package Label Design</a>
+                            <a href="#portfolio" data-i18n="services.listing">Amazon Listing Design</a>
+                            <a href="#portfolio" data-i18n="services.ebc">Amazon EBC and A+ Premium Listing</a>
+                            <a href="#portfolio" data-i18n="services.ppc">Amazon PPC Management Optimization</a>
+                            <a href="#portfolio" data-i18n="services.setup">Product Setup</a>
+                            <a href="#portfolio" data-i18n="services.optimization">Listing Optimization</a>
+                            <a href="#portfolio" data-i18n="services.storefront">Storefront Maintenance</a>
+                        </div>
+                    </div>
+                    <a href="#about" class="hover:text-accent transition" data-i18n="nav.about">About</a>
+                    <a href="#" class="hover:text-accent transition" data-i18n="nav.contact" onclick="openOrderModal(event)">Contact</a>
+                    
+                    <!-- Language Button for Mobile -->
+                    <div class="pt-2 border-t border-gray-700 language-selector">
+                        <button class="language-button flex items-center space-x-2 hover:opacity-80 transition" onclick="toggleLanguageDropdown(event)">
+                            <img src="https://flagcdn.com/w40/us.png" alt="English" class="h-6 w-auto rounded shadow-sm">
+                        </button>
+                        <div class="language-dropdown">
+                            <div class="language-option" onclick="changeLanguage('en')">
+                                <img src="https://flagcdn.com/w40/us.png" alt="English" class="rounded shadow-sm">
+                                <span>English</span>
+                            </div>
+                            <div class="language-option" onclick="changeLanguage('de')">
+                                <img src="https://flagcdn.com/w40/de.png" alt="Deutsch" class="rounded shadow-sm">
+                                <span>Deutsch</span>
+                            </div>
+                            <div class="language-option" onclick="changeLanguage('fr')">
+                                <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="rounded shadow-sm">
+                                <span>Français</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative w-full h-screen overflow-hidden">
+        <!-- Background Images -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="public/hero image/Final Hero1-01.jpg" alt="Design illustration"
+                class="w-full h-full object-cover">
+            <img src="public/hero image/Final Hero2-01-01.png" alt="Design overlay"
+                class="absolute top-0 left-0 w-full h-full object-cover animate-blink" style="z-index: 1;">
+        </div>
+
+        <!-- Content Overlay -->
+        <div class="relative z-10 container mx-auto px-6 h-full flex items-center">
+            <div class="max-w-3xl space-y-8 md:ml-0">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                    <span class="text-accent block" data-i18n="hero.title">Supercharge Your Amazon Growth With Better Design</span>
+                </h1>
+                <p class="text-white text-xl md:text-2xl max-w-xl" data-i18n="hero.subtitle">
+                    I use a customer-focused design strategy to highlight your product's value and drive more sales.
+                </p>
+                <div class="flex flex-col items-start space-y-6 pt-16">
+                    <a href="https://www.behance.net/njbldesign" target="_blank" class="flex flex-col items-center space-y-4 group cursor-pointer">
+                        <div
+                            class="w-16 h-16 bg-accent rounded-full flex items-center justify-center transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(253,147,20,0.6)] group-hover:brightness-125">
+                            <svg class="w-10 h-10 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 22L2 2h20L12 22z" />
+                            </svg>
+                        </div>
+                        <div
+                            class="bg-accent text-primary font-bold text-2xl px-6 py-3 rounded transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(253,147,20,0.6)] group-hover:brightness-125"
+                            data-i18n="hero.portfolio">
+                            Portfolio
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                <span class="text-accent" data-i18n="value.title1">Why Your Business Deserves a Strategic,</span><br>
+                <span class="text-accent" data-i18n="value.title2">Sales-Driven Design?</span>
+            </h2>
+            <div class="max-w-5xl mx-auto space-y-6 text-white">
+                <p class="text-justify leading-relaxed text-xl" data-i18n="value.p1">
+                    Design isn't just about looking good — it's about selling smarter. A sales-driven design uses
+                    customer psychology, data-driven layouts, and strong visual hierarchy to quickly guide visitors from
+                    interest to purchase. This approach transforms version rates and consistent long-term growth.
+                </p>
+                <p class="text-justify leading-relaxed text-xl" data-i18n="value.p2">
+                    On Amazon and other e-commerce platforms, this impact is even stronger. Professional strategic
+                    visuals boost click-through, improve ranking, and help your product stand out in crowded
+                    marketplaces — often leading to conversion rate increases of 70%-80% when the design is fully
+                    optimized.
+                </p>
+                <p class="text-justify leading-relaxed font-semibold text-white text-xl" data-i18n="value.p3">
+                    If you're ready to increase conversions and position your brand as the clear choice, now is the time
+                    to upgrade your visuals and take the lead.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-gradient-to-b from-primary to-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center space-x-4 mb-8">
+                    <div class="bg-accent text-primary font-bold px-4 py-2 rounded text-sm" data-i18n="portfolio.tag">NJBL</div>
+                    <h3 class="text-2xl font-bold text-accent" data-i18n="portfolio.title">AMAZON LISTING</h3>
+                </div>
+
+                <!-- Swiper Carousel -->
+                <div class="relative">
+                    <div class="swiper portfolioSwiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slides will be dynamically loaded from amazon-portfolio.js -->
+                        </div>
+                    </div>
+                    <!-- Pagination Dots - Below everything -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Logos Section -->
+    <section class="py-12 bg-primary">
+        <div class="w-full px-12">
+            <div class="bg-white rounded-lg py-8 px-12">
+                <div class="swiper logoSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="public/e-commerce logo/amazon-logo-on-transparent-background-free-vector.png"
+                                alt="Amazon"
+                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="public/e-commerce logo/EBay_logo.png" alt="eBay"
+                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="public/e-commerce logo/Shopify_logo_2018.svg.png" alt="Shopify"
+                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="public/e-commerce logo/Aliexpress_logo.svg.png" alt="AliExpress"
+                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="public/e-commerce logo/Bol.com_2019_logo.svg.png" alt="Bol.com"
+                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="public/e-commerce logo/Etsy_logo.svg.png" alt="Etsy"
+                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="public/e-commerce logo/Trendyol_online.png" alt="Trendyol"
+                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="public/e-commerce logo/walmart-logo-png_seeklogo-151324.png" alt="Walmart"
+                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                        </div>
+                        <div class="swiper-slide flex items-center justify-center">
+                            <img src="public/e-commerce logo/JB_Hi-Fi-Logo.wine.png" alt="JB Hi-Fi"
+                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 text-accent leading-tight max-w-5xl mx-auto" data-i18n="services.label.title">
+                Upgrade your product's look with label designs that grab attention, build trust, and drive higher
+                conversions
+            </h2>
+
+            <!-- Label Design Images with Crossfade -->
+            <div class="relative w-full mx-auto mb-12 px-4">
+                <div class="relative w-full" style="padding-bottom: 38.4%; /* 861/2242 = 0.384 */">
+                    <img src="public/label-design/design1.png" alt="Label Design 1"
+                        class="absolute inset-0 w-full h-full object-contain">
+                    <img src="public/label-design/design2.png" alt="Label Design 2"
+                        class="absolute inset-0 w-full h-full object-contain label-crossfade" style="z-index: 1;">
+                </div>
+            </div>
+
+            <!-- Description Text -->
+            <div class="max-w-5xl mx-auto text-center">
+                <p class="text-white text-xl leading-relaxed text-justify" data-i18n="services.label.description">
+                    Boost your Amazon sales with a high-quality product label. I create premium, conversion-focused
+                    designs backed by 7–8 years of experience with Amazon sellers. A professional label instantly builds
+                    trust, makes your product stand out, and turns more shoppers into buyers. If you want a label that
+                    sells—not just looks good—I've got you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amazon Visuals Section -->
+    <section class="py-16 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-5xl font-bold text-center mb-8 text-accent" data-i18n="services.amazon.title">Conversion-Focused Amazon Visuals
+            </h2>
+            <div class="max-w-5xl mx-auto mb-12">
+                <p class="text-white text-base md:text-xl leading-relaxed mb-6 text-justify" data-i18n="services.amazon.p1">
+                    I create high-converting Amazon listing images designed to boost visibility, trust, and sales.
+                </p>
+                <p class="text-white text-base md:text-xl leading-relaxed mb-6 text-justify" data-i18n="services.amazon.p2">
+                    With a strategic approach to Amazon's competitive marketplace, I deliver a complete set of optimized
+                    visuals—including Product Main Image, Product Kit/Included Items Image, Features Highlight Image,
+                    Comparison Image, Infographic Image, Usage/Benefits Image, Lifestyle Image, and Instruction Image.
+                </p>
+                <p class="text-white text-base md:text-xl leading-relaxed text-justify" data-i18n="services.amazon.p3">
+                    Every image is crafted to communicate value instantly, answer customer questions, and influence
+                    purchase decisions.
+                </p>
+            </div>
+
+            <!-- 3x3 Grid -->
+            <div class="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-8 max-w-5xl mx-auto">
+                <!-- Grid Item 1 -->
+                <div class="group relative cursor-pointer">
+                    <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
+                        <img src="public/product/product1.jpg" alt="Kit Include Image"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
+                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
+                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.kit.title">KIT
+                            INCLUDE<br>IMAGE</h3>
+                    </div>
+                    <!-- Hover Overlay -->
+                    <div
+                        class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.kit.title">KIT
+                            INCLUDES<br>IMAGE</h3>
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.kit.description">
+                            A Kit Include image shows exactly what customers get, building trust and eliminating
+                            confusion. It increases perceived value, reduces returns, and boosts conversions by giving
+                            buyers clear, confident expectations.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Grid Item 2 - Placeholder -->
+                <div class="group relative cursor-pointer">
+                    <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
+                        <img src="public/product/product2.jpg" alt="Image 2" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
+                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
+                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.features.title">
+                            FEATURES<br>IMAGE</h3>
+                    </div>
+                    <div
+                        class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.features.title">
+                            FEATURES<br>IMAGE</h3>
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.features.description">
+                            A Kit Features Image highlights your product's key benefits instantly, builds confidence,
+                            and boosts conversions by making its value easy to understand.</p>
+                    </div>
+                </div>
+
+                <!-- Grid Item 3 - Placeholder -->
+                <div class="group relative cursor-pointer">
+                    <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
+                        <img src="public/product/product3.jpg" alt="Image 3" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
+                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
+                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.comparison.title">
+                            COMPARISON<br>IMAGE</h3>
+                    </div>
+                    <div
+                        class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.comparison.title">
+                            COMPARISON<br>IMAGE</h3>
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.comparison.description">
+                            A Comparison Image quickly shows why your product is better, highlighting advantages
+                            clearly. It builds trust, reduces doubt, and boosts conversions by making the choice easy
+                            for customers.</p>
+                    </div>
+                </div>
+
+                <!-- Grid Item 4 - Placeholder -->
+                <div class="group relative cursor-pointer">
+                    <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
+                        <img src="public/product/product4.jpg" alt="Image 4" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
+                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
+                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.infographic.title">
+                            INFOGRAPHIC<br>IMAGE</h3>
+                    </div>
+                    <div
+                        class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.infographic.title">
+                            INFOGRAPHIC<br>IMAGE</h3>
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.infographic.description">
+                            An Infographic image explains your product's key points in a quick, visual way, making
+                            information easy to understand and boosting customer confidence and conversions.</p>
+                    </div>
+                </div>
+
+                <!-- Grid Item 5 - Placeholder -->
+                <div class="group relative cursor-pointer">
+                    <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
+                        <img src="public/product/product5.jpg" alt="Image 5" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
+                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
+                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.uses.title">PRODUCT
+                            USES<br>IMAGE</h3>
+                    </div>
+                    <div
+                        class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.uses.title">PRODUCT
+                            USES<br>IMAGE</h3>
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.uses.description">
+                            A Uses image shows how the product works in real situations, helping customers understand
+                            its purpose, visualize the benefits, and feel more confident to buy.</p>
+                    </div>
+                </div>
+
+                <!-- Grid Item 6 - Placeholder -->
+                <div class="group relative cursor-pointer">
+                    <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
+                        <img src="public/product/product6.jpg" alt="Image 6" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
+                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
+                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.lifestyle.title">
+                            LIFESTYLE<br>IMAGE</h3>
+                    </div>
+                    <div
+                        class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.lifestyle.title">
+                            LIFESTYLE<br>IMAGE</h3>
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.lifestyle.description">
+                            A Lifestyle image shows the product in everyday use, helping customers imagine it in their
+                            own life, building trust, and increasing the likelihood of purchase.</p>
+                    </div>
+                </div>
+
+                <!-- Grid Item 7 - Placeholder -->
+                <div class="group relative cursor-pointer">
+                    <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
+                        <img src="public/product/product7.jpg" alt="Image 7" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
+                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
+                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.instruction.title">INSTRUCTION
+                            ONE<br>IMAGE</h3>
+                    </div>
+                    <div
+                        class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.instruction.title">INSTRUCTION
+                            ONE<br>IMAGE</h3>
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.instruction.description">
+                            An Instruction image clearly shows how to use the product, reducing confusion, preventing
+                            errors, and increasing customer confidence and satisfaction.</p>
+                    </div>
+                </div>
+
+                <!-- Grid Item 8 - Placeholder -->
+                <div class="group relative cursor-pointer">
+                    <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
+                        <img src="public/product/product8.jpg" alt="Image 8" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
+                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
+                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.instruction.title">
+                            INSTRUCTIONS<br>IMAGE</h3>
+                    </div>
+                    <div
+                        class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.instruction.title">
+                            INSTRUCTIONS<br>IMAGE</h3>
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.instruction.description">
+                            An Instruction image clearly shows how to use the product, reducing confusion, preventing
+                            errors, and increasing customer confidence and satisfaction.</p>
+                    </div>
+                </div>
+
+                <!-- Grid Item 9 - Placeholder -->
+                <div class="group relative cursor-pointer">
+                    <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
+                        <img src="public/product/product9.jpg" alt="Image 9" class="w-full h-full object-cover">
+                    </div>
+                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
+                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
+                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.main.title">PRODUCT
+                            MAIN<br>IMAGE</h3>
+                    </div>
+                    <div
+                        class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.comparison.title">
+                            COMPARISON<br>IMAGE</h3>
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.main.description">
+                            A professional Main Image grabs attention instantly, showcases your product clearly, boosts
+                            click-through rates, and sets the foundation for higher sales and trust on Amazon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Info Box -->
+            <div class="max-w-6xl mx-auto mt-12 bg-gray-700 rounded-lg p-8">
+                <p class="text-white text-lg leading-relaxed text-center" data-i18n="services.info.text">
+                    Each image type serves a specific purpose in the customer journey—from grabbing attention to
+                    answering questions and building trust. Together, they create a complete visual story that drives
+                    conversions and reduces returns.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="max-w-4xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight" data-i18n="workflow.title">
+                    A Detailed Breakdown of the Overall<br>
+                    Project Workﬂow
+                </h2>
+            </div>
+
+            <!-- Workflow Images Grid -->
+            <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-16">
+                <!-- Workflow Item 1 -->
+                <div class="flex flex-col">
+                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300" style="aspect-ratio: 2000/1890;">
+                        <img src="public/workflow/1 Client Meeting.jpg" alt="Meeting with client"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-white text-xl text-center mt-6 leading-relaxed" data-i18n="workflow.step1">Meeting with client</p>
+                </div>
+
+                <!-- Workflow Item 2 -->
+                <div class="flex flex-col">
+                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300" style="aspect-ratio: 2000/1890;">
+                        <img src="public/workflow/2 Reserch phase.jpg" alt="Research & Concept Development Phase"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-white text-xl text-center mt-6 leading-relaxed" data-i18n="workflow.step2">Research & Concept Development Phase
+                    </p>
+                </div>
+
+                <!-- Workflow Item 3 -->
+                <div class="flex flex-col">
+                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300" style="aspect-ratio: 2000/1890;">
+                        <img src="public/workflow/3 Execution.jpg" alt="Design Execution Phase"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-white text-xl text-center mt-6 leading-relaxed" data-i18n="workflow.step3">Design Execution Phase</p>
+                </div>
+
+                <!-- Workflow Item 4 -->
+                <div class="flex flex-col">
+                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300" style="aspect-ratio: 2000/1890;">
+                        <img src="public/workflow/4 Review and Feedback.jpg"
+                            alt="Project Delivery & Client Review Phase" class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-white text-xl text-center mt-6 leading-relaxed" data-i18n="workflow.step4">Project Delivery & Client Review
+                        Phase</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="max-w-4xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white" data-i18n="testimonials.title">
+                    What Our Clients Say
+                </h2>
+                <p class="text-gray-400 text-lg mt-4" data-i18n="testimonials.subtitle">
+                    Real feedback from real clients
+                </p>
+            </div>
+
+            <!-- Testimonials Slider -->
+            <div class="max-w-6xl mx-auto">
+                <div class="swiper testimonialSwiper">
+                    <div class="swiper-wrapper pb-12">
+                        <!-- Testimonials will be dynamically loaded from testimonials.js -->
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-primary">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto text-justify">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-accent text-center" data-i18n="about.title">About me</h2>
+                <p class="text-white text-xl leading-relaxed mb-4" data-i18n="about.p1">
+                    Hi, I'm NaJi, your Amazon design expert with 4+ years of professional experience in design. Over the
+                    years, I've helped 100+ Amazon sellers create high-converting product label designs, listings, and
+                    brand visuals that drive more clicks and turn views into sales.
+                </p>
+                <p class="text-white text-xl leading-relaxed mb-4" data-i18n="about.p2">
+                    I have a strong educational background in Graphic Design and Digital Marketing, which allows me to
+                    combine creativity with data-driven strategies. My work focuses not just on aesthetics, but on
+                    boosting conversions and brand trust on Amazon.
+                </p>
+                <p class="text-white text-xl leading-relaxed" data-i18n="about.p3">
+                    Whether you're launching your first product or scaling an existing Amazon brand, I support you from
+                    concept to full launch, transforming ideas into high-converting designs.
+                </p>
+            </div>
+
+            <!-- Two Column Section -->
+            <div class="max-w-5xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <!-- Left Column -->
+                <div>
+                    <!-- What I Can Do for You -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-accent mb-6" data-i18n="about.services.title">What I Can Do for You:</h3>
+                        <ul class="space-y-6 text-white text-lg">
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">•</span>
+                                <span data-i18n="about.services.1">Product Label & Packaging Design (Concept → Final Production)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">•</span>
+                                <span data-i18n="about.services.2">Amazon Listing Images (Main Image, Infographics, Lifestyle etc)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">•</span>
+                                <span data-i18n="about.services.3">Amazon EBC & A+ / A+ Premium Content</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">•</span>
+                                <span data-i18n="about.services.4">Amazon PPC Management & Optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">•</span>
+                                <span data-i18n="about.services.5">Product Setup & Listing Optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">•</span>
+                                <span data-i18n="about.services.6">Amazon Storefront Design & Maintenance</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Why Choose Me -->
+                    <div class="mt-16">
+                        <h3 class="text-2xl font-bold text-accent mb-6" data-i18n="about.why.title">Why Choose Me?</h3>
+                        <ul class="space-y-6 text-white text-lg">
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">•</span>
+                                <span data-i18n="about.why.1">100+ Amazon brands supported successfully</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">•</span>
+                                <span data-i18n="about.why.2">Design strategies focused on conversion & clarity</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">•</span>
+                                <span data-i18n="about.why.3">Clean, professional visuals aligned with Amazon guidelines</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent mr-3">•</span>
+                                <span data-i18n="about.why.4">Fast communication & reliable delivery</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column - Image -->
+                <div class="flex items-start justify-end">
+                    <img src="public/hero image/njbl.jpeg" alt="NaJi"
+                        class="w-[85%] h-auto object-cover rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                </div>
+            </div>
+
+            <!-- Bottom Text -->
+            <div class="max-w-5xl mx-auto mt-16 text-center">
+                <p class="text-white text-xl leading-relaxed mb-4" data-i18n="about.bottom.p1">
+                    If you want your Amazon product to launch strong, look premium, and sell consistently, you're in the
+                    right place.
+                </p>
+                <p class="text-2xl font-bold" data-i18n="about.bottom.p2">
+                    Let's turn your idea into a high-performing Amazon listing.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Now Button Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <button id="orderNowBtn"
+                    class="bg-white text-accent font-bold text-2xl px-12 py-4 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+                    data-i18n="order.button">
+                    Order Now!!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-primary rounded-lg max-w-5xl w-full max-h-[90vh] overflow-y-auto relative">
+            <!-- Close Button -->
+            <button id="closeModal" class="absolute top-4 right-4 text-white hover:text-accent text-3xl font-bold z-10">
+                &times;
+            </button>
+
+            <div class="p-8">
+                <h2 class="text-3xl font-bold text-accent mb-8 text-center" data-i18n="order.modal.title">Get Started!</h2>
+
+                <!-- Two Column Layout -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Left Column - Contact Details -->
+                    <div class="space-y-8">
+                        <!-- Logo -->
+                        <div>
+                            <img src="public/logo/company Logo-01.png" alt="NJBL Design" class="h-16">
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Email -->
+                            <div class="space-y-2">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-accent text-3xl">📧</span>
+                                    <p class="text-white text-lg font-semibold" data-i18n="order.email">Email</p>
+                                </div>
+                                <p class="text-white text-lg">info@njbldesign.com</p>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="space-y-2">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-accent text-3xl">📱</span>
+                                    <p class="text-white text-lg font-semibold" data-i18n="order.phone">Phone</p>
+                                </div>
+                                <p class="text-white text-lg">+90 (505) 677 9458</p>
+                            </div>
+
+                            <!-- WhatsApp -->
+                            <div class="space-y-2">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-accent text-3xl">💬</span>
+                                    <p class="text-white text-lg font-semibold" data-i18n="order.whatsapp">WhatsApp</p>
+                                </div>
+                                <p class="text-white text-lg">+90 (505) 677 9458</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Order Form -->
+                    <div>
+                        <form id="orderForm" class="space-y-4">
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2" data-i18n="order.form.name">Name *</label>
+                                <input type="text" name="from_name" required
+                                    class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 focus:border-accent focus:outline-none text-white"
+                                    data-i18n="order.form.name.placeholder" placeholder="Your name">
+                            </div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2" data-i18n="order.form.email">Email *</label>
+                                <input type="email" name="from_email" required
+                                    class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 focus:border-accent focus:outline-none text-white"
+                                    data-i18n="order.form.email.placeholder" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2" data-i18n="order.form.service">Service Needed *</label>
+                                <select name="service" required
+                                    class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 focus:border-accent focus:outline-none text-white">
+                                    <option value="" data-i18n="order.form.service.select">Select a service</option>
+                                    <option value="label-design" data-i18n="order.form.service.label">Package Label Design</option>
+                                    <option value="listing-design" data-i18n="order.form.service.listing">Amazon Listing Design</option>
+                                    <option value="a-plus-listing" data-i18n="order.form.service.aplus">Amazon EBC & A+ Premium Listing</option>
+                                    <option value="ppc" data-i18n="order.form.service.ppc">Amazon PPC Management Optimization</option>
+                                    <option value="listing-optimization" data-i18n="order.form.service.optimization">Listing Optimization</option>
+                                    <option value="storefront" data-i18n="order.form.service.storefront">Storefront Design</option>
+                                    <option value="other" data-i18n="order.form.service.other">Other ...</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-white text-sm font-medium mb-2" data-i18n="order.form.details">Project Details *</label>
+                                <textarea name="message" rows="5" required
+                                    class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 focus:border-accent focus:outline-none text-white"
+                                    data-i18n="order.form.details.placeholder" placeholder="Tell me about your project..."></textarea>
+                            </div>
+                            <button type="submit" id="submitBtn"
+                                class="w-full bg-accent text-primary font-semibold px-6 py-3 rounded hover:bg-opacity-90 transition"
+                                data-i18n="order.form.submit">
+                                Submit Order Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/00905056779458" target="_blank" 
+       class="fixed bottom-6 right-6 w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 z-50 group">
+        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-primary border-t border-gray-700">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-center space-x-4 text-gray-400">
+                <img src="public/logo/company Logo-01.png" alt="NJBL Design" class="h-8">
+                <p data-i18n="footer.copyright">Copyright 2025 © njbldesign</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Amazon Portfolio Dynamic Loader -->
+    <script src="amazon-portfolio.js"></script>
+
+    <script>
+        // Initialize Portfolio Swiper
+        const swiper = new Swiper('.portfolioSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        // Initialize Logo Swiper - Continuous Auto Slide
+        const logoSwiper = new Swiper('.logoSwiper', {
+            slidesPerView: 5,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 1,
+                disableOnInteraction: false,
+            },
+            speed: 5000,
+            allowTouchMove: true,
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 25
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 30
+                }
+            }
+        });
+
+        // Initialize Testimonials Swiper
+        const testimonialSwiper = new Swiper('.testimonialSwiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                }
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileServicesBtn = document.getElementById('mobileServicesBtn');
+        const mobileServicesMenu = document.getElementById('mobileServicesMenu');
+
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+
+        // Mobile services dropdown toggle
+        mobileServicesBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileServicesMenu.classList.toggle('active');
+            mobileServicesBtn.querySelector('svg').classList.toggle('rotate-180');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (mobileMenu.classList.contains('active') &&
+                !mobileMenu.contains(e.target) &&
+                !mobileMenuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const targetId = this.getAttribute('href').substring(1);
+                    let offsetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                    
+                    // Add 5% viewport height offset for portfolio and about sections
+                    if (targetId === 'portfolio' || targetId === 'about') {
+                        offsetPosition -= window.innerHeight * 0.05;
+                    }
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Order Modal functionality
+        const orderModal = document.getElementById('orderModal');
+        const orderNowBtn = document.getElementById('orderNowBtn');
+        const closeModal = document.getElementById('closeModal');
+
+        // Function to open order modal
+        function openOrderModal(event) {
+            if (event) event.preventDefault();
+            orderModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Make openOrderModal globally available
+        window.openOrderModal = openOrderModal;
+
+        orderNowBtn.addEventListener('click', () => {
+            orderModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModal.addEventListener('click', () => {
+            orderModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // EmailJS Configuration
+        // IMPORTANT: Replace these with your actual EmailJS credentials
+        // Get them from: https://dashboard.emailjs.com/
+        const EMAILJS_PUBLIC_KEY = 'PEClTotPoJ13EalFm';  // Replace with your Public Key
+        const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID_HERE';  // Replace with your Service ID
+        const EMAILJS_TEMPLATE_ID = 'template_93uw2d4'; // Replace with your Template ID
+
+        // Initialize EmailJS
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+
+        // Order Form Submission
+        const orderForm = document.getElementById('orderForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+            // Send email using EmailJS
+            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    alert('✅ Order request sent successfully! We will contact you soon.');
+                    
+                    // Reset form
+                    orderForm.reset();
+                    
+                    // Close modal
+                    orderModal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Re-enable submit button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Order Request';
+                    submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                }, function(error) {
+                    console.error('FAILED...', error);
+                    
+                    // Show error message
+                    alert('❌ Failed to send order request. Please try again or contact us directly via email.');
+                    
+                    // Re-enable submit button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Order Request';
+                    submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                });
+        });
+
+        // Close modal when clicking outside
+        orderModal.addEventListener('click', (e) => {
+            if (e.target === orderModal) {
+                orderModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !orderModal.classList.contains('hidden')) {
+                orderModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+
+</html>
