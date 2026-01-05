@@ -1,11 +1,11 @@
 // English translations
 export default {
     // Navigation
-    'nav.home': 'Home',
-    'nav.aboutme': 'About Me',
-    'nav.whatcando': 'What Can I Do For You',
-    'nav.services': 'Services',
-    'nav.contact': 'Contact',
+    'nav.home': 'home',
+    'nav.aboutme': 'about me',
+    'nav.whatcando': 'project workflow',
+    'nav.services': 'services',
+    'nav.contact': "let's talk",
     
     // Services Dropdown
     'services.label': 'Package Label Design',
@@ -110,7 +110,7 @@ export default {
     'order.email': 'Email',
     'order.phone': 'Phone',
     'order.whatsapp': 'WhatsApp',
-    'whatsapp.tooltip': 'Let\'s Talk',
+    'whatsapp.tooltip': 'let\'s talk',
     'order.form.name': 'Name',
     'order.form.email': 'Email',
     'order.form.service': 'Service Needed',

@@ -357,37 +357,16 @@
                             </svg>
                         </button>
                         <div class="dropdown-menu">
-                            <a href="#portfolio" data-i18n="services.label">Package Label Design</a>
-                            <a href="#portfolio" data-i18n="services.listing">Amazon Listing Design</a>
-                            <a href="#portfolio" data-i18n="services.ebc">Amazon EBC and A+ Premium Listing</a>
-                            <a href="#portfolio" data-i18n="services.ppc">Amazon PPC Management Optimization</a>
-                            <a href="#portfolio" data-i18n="services.setup">Product Setup</a>
-                            <a href="#portfolio" data-i18n="services.optimization">Listing Optimization</a>
-                            <a href="#portfolio" data-i18n="services.storefront">Storefront Maintenance</a>
+                            <a data-i18n="services.label" onclick="openOrderModal(event)">Package Label Design</a>
+                            <a data-i18n="services.listing" onclick="openOrderModal(event)">Amazon Listing Design</a>
+                            <a data-i18n="services.ebc" onclick="openOrderModal(event)">Amazon EBC and A+ Premium Listing</a>
+                            <a data-i18n="services.ppc" onclick="openOrderModal(event)">Amazon PPC Management Optimization</a>
+                            <a data-i18n="services.setup" onclick="openOrderModal(event)">Product Setup</a>
+                            <a data-i18n="services.optimization" onclick="openOrderModal(event)">Listing Optimization</a>
+                            <a data-i18n="services.storefront" onclick="openOrderModal(event)">Storefront Maintenance</a>
                         </div>
                     </div>
-                    <a href="#" class="nav-link hover:text-accent transition" data-i18n="nav.contact" onclick="openOrderModal(event)">Contact</a>
-
-                    <!-- Language Button -->
-                    <div class="language-selector">
-                        <button class="language-button flex items-center space-x-2 hover:opacity-80 transition" onclick="toggleLanguageDropdown(event)">
-                            <img src="https://flagcdn.com/w40/us.png" alt="English" class="h-6 w-auto rounded shadow-sm">
-                        </button>
-                        <div class="language-dropdown">
-                            <div class="language-option" onclick="changeLanguage('en')">
-                                <img src="https://flagcdn.com/w40/us.png" alt="English" class="rounded shadow-sm">
-                                <span>English</span>
-                            </div>
-                            <div class="language-option" onclick="changeLanguage('de')">
-                                <img src="https://flagcdn.com/w40/de.png" alt="Deutsch" class="rounded shadow-sm">
-                                <span>Deutsch</span>
-                            </div>
-                            <div class="language-option" onclick="changeLanguage('fr')">
-                                <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="rounded shadow-sm">
-                                <span>Français</span>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="https://wa.me/00905056779458" target="_blank" class="nav-link hover:text-accent transition" data-i18n="nav.contact">Contact</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -420,8 +399,8 @@
                         </div>
                     </div>
                     <a href="#about" class="hover:text-accent transition" data-i18n="nav.about">About</a>
-                    <a href="#" class="hover:text-accent transition" data-i18n="nav.contact" onclick="openOrderModal(event)">Contact</a>
-                    
+                    <a href="https://wa.me/00905056779458" target="_blank" class="nav-link hover:text-accent transition" data-i18n="nav.contact">Contact</a>
+
                     <!-- Language Button for Mobile -->
                     <div class="pt-2 border-t border-gray-700 language-selector">
                         <button class="language-button flex items-center space-x-2 hover:opacity-80 transition" onclick="toggleLanguageDropdown(event)">
@@ -489,14 +468,14 @@
                class="flex items-center gap-0 group transition-all duration-300 hover:scale-105"
                style="filter: drop-shadow(0 0 0px rgba(253, 147, 20, 0));">
                 <!-- Left Circle Container -->
-                <div class="relative flex items-center justify-center w-24 h-24 bg-accent rounded-full transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(253,147,20,0.8)]">
+                <div class="relative flex items-center justify-center w-20 h-20 bg-accent rounded-full transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(253,147,20,0.8)]">
                     <!-- Inner Circle -->
-                    <div class="w-14 h-14 bg-primary rounded-full"></div>
+                    <div class="w-10 h-10 bg-primary rounded-full"></div>
                 </div>
                 
                 <!-- Right Button -->
-                <div class="bg-accent px-12 py-6 rounded-3xl ml-3 pl-10 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(253,147,20,0.8)]">
-                    <span class="text-primary font-bold text-3xl">Portfolio</span>
+                <div class="bg-accent px-12 py-6 rounded-2xl ml-3 pl-10 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(253,147,20,0.8)]">
+                    <span class="text-primary font-bold text-2xl" style="font-size: xx-large;">Portfolio</span>
                 </div>
             </a>
         </div>
@@ -532,18 +511,18 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16 bg-gradient-to-b from-primary to-gray-900">
+    <section id="portfolio" class="py-8 bg-gradient-to-b from-primary to-gray-900">
         <div class="container mx-auto px-6">
             <div class="max-w-7xl mx-auto">
                 <!-- Swiper Carousel -->
-                <div class="relative">
+                <div class="relative pb-12">
                     <div class="swiper portfolioSwiper">
                         <div class="swiper-wrapper">
                             <!-- Slides will be dynamically loaded from amazon-portfolio.js -->
                         </div>
+                        <!-- Pagination Dots -->
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <!-- Pagination Dots - Below everything -->
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -551,46 +530,46 @@
 
     <!-- Platform Logos Section -->
     <section class="py-12 bg-primary">
-        <div class="w-full px-12">
-            <div class="bg-white rounded-lg py-8 px-12">
+        <div class="w-full mx-auto px-12">
+            <div class="bg-white rounded-lg py-5 px-12">
                 <div class="swiper logoSwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/amazon-logo-on-transparent-background-free-vector.png"
                                 alt="Amazon"
-                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-4 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/EBay_logo.png" alt="eBay"
-                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-4 md:h-8 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/Shopify_logo_2018.svg.png" alt="Shopify"
-                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-4 md:h-8 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/Aliexpress_logo.svg.png" alt="AliExpress"
-                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-4 md:h-8 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/Bol.com_2019_logo.svg.png" alt="Bol.com"
-                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-4 md:h-8 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/Etsy_logo.svg.png" alt="Etsy"
-                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-4 md:h-8 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/Trendyol_online.png" alt="Trendyol"
-                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-4 md:h-8 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/walmart-logo-png_seeklogo-151324.png" alt="Walmart"
-                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-4 md:h-8 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/JB_Hi-Fi-Logo.wine.png" alt="JB Hi-Fi"
-                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-4 md:h-8 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                     </div>
                 </div>
@@ -602,7 +581,7 @@
     <section id="services" class="py-16 bg-gray-900">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-left mb-12 text-white leading-tight" data-i18n="services.label.title">
+                <h2 class="text-3xl md:text-5xl font-bold text-left mb-12 text-accent leading-tight text-center" data-i18n="services.label.title">
                     Upgrade your product's look with label designs that grab attention, build trust, and drive higher
                     conversions
                 </h2>
@@ -630,8 +609,8 @@
             </div>
 
             <!-- Description Text -->
-            <div class="max-w-5xl mx-auto text-center">
-                <p class="text-white text-xl leading-relaxed text-left md:text-justify" data-i18n="services.label.description">
+            <div class="w-full mx-auto mt-12 bg-accent rounded-lg p-8">
+                <p class="text-white text-2xl leading-relaxed text-left md:text-center" data-i18n="services.label.description">
                     Boost your Amazon sales with a high-quality product label. I create premium, conversion-focused
                     designs backed by 7–8 years of experience with Amazon sellers. A professional label instantly builds
                     trust, makes your product stand out, and turns more shoppers into buyers. If you want a label that
@@ -871,7 +850,7 @@
 
             <!-- Bottom Info Box -->
             <div class="max-w-6xl mx-auto mt-12 bg-accent rounded-lg p-8">
-                <p class="text-white text-lg leading-relaxed text-center" data-i18n="services.info.text">
+                <p class="text-white text-2xl leading-relaxed text-center" data-i18n="services.info.text">
                     Each image type serves a specific purpose in the customer journey—from grabbing attention to
                     answering questions and building trust. Together, they create a complete visual story that drives
                     conversions and reduces returns.
@@ -885,9 +864,8 @@
         <div class="container mx-auto px-6">
             <!-- Section Header -->
             <div class="max-w-4xl mx-auto mb-16 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white leading-tight" data-i18n="workflow.title">
-                    A Detailed Breakdown of the Overall<br>
-                    Project Workﬂow
+                <h2 class="md:text-4xl font-bold mb-6 text-white leading-tight data-i18n="workflow.title">
+                    A Detailed Breakdown of the Project Workﬂow
                 </h2>
             </div>
 
@@ -899,7 +877,10 @@
                         <img src="public/workflow/1 Client Meeting.jpg" alt="Meeting with client"
                             class="w-full h-full object-cover">
                     </div>
-                    <p class="text-white text-xl text-center mt-6 leading-relaxed" data-i18n="workflow.step1">Meeting with client</p>
+                    <p class="text-accent text-2xl font-bold text-center mt-6 leading-relaxed" >Meeting with </br>client</p>
+                    <p class="text-white text-xl text-center mt-6 leading-relaxed">We discuss the client’s goals, expectations, timeline, and requirements 
+to clearly understand the project scope and direction.
+</p>
                 </div>
 
                 <!-- Workflow Item 2 -->
@@ -908,8 +889,13 @@
                         <img src="public/workflow/2 Reserch phase.jpg" alt="Research & Concept Development Phase"
                             class="w-full h-full object-cover">
                     </div>
-                    <p class="text-white text-xl text-center mt-6 leading-relaxed" data-i18n="workflow.step2">Research & Concept Development Phase
+                    <p class="text-accent text-2xl font-bold text-center mt-6 leading-relaxed" data-i18n="workflow.step2">Research & Concept Development Phase
                     </p>
+                    <p class="text-white text-xl text-center mt-6 leading-relaxed">We analyze the market, audience, and competitors, then develop creative 
+concepts and strategies that align with the project goals.
+
+                    </p>
+                    
                 </div>
 
                 <!-- Workflow Item 3 -->
@@ -918,7 +904,10 @@
                         <img src="public/workflow/3 Execution.jpg" alt="Design Execution Phase"
                             class="w-full h-full object-cover">
                     </div>
-                    <p class="text-white text-xl text-center mt-6 leading-relaxed" data-i18n="workflow.step3">Design Execution Phase</p>
+                    <p class="text-accent text-2xl font-bold text-center mt-6 leading-relaxed">Design Execution </br> Phase</p>
+                    <p class="text-white text-xl text-center mt-6 leading-relaxed">The approved concept is transformed into final designs through careful layout, 
+visuals, and refinement, ensuring quality and consistency.
+</p>
                 </div>
 
                 <!-- Workflow Item 4 -->
@@ -927,8 +916,11 @@
                         <img src="public/workflow/4 Review and Feedback.jpg"
                             alt="Project Delivery & Client Review Phase" class="w-full h-full object-cover">
                     </div>
-                    <p class="text-white text-xl text-center mt-6 leading-relaxed" data-i18n="workflow.step4">Project Delivery & Client Review
+                    <p class="text-accent text-2xl font-bold text-center mt-6 leading-relaxed" data-i18n="workflow.step4">Project Delivery & Client Review
                         Phase</p>
+                        <p class="text-white text-xl text-center mt-6 leading-relaxed">The completed project is delivered for client review, feedback is collected, 
+and final adjustments are made before approval.
+</p>
                 </div>
             </div>
         </div>
@@ -991,27 +983,27 @@
                         <h3 class="text-2xl font-bold text-white mb-6" data-i18n="about.services.title">What I Can Do for You:</h3>
                         <ul class="space-y-3 text-white text-lg">
                             <li class="flex items-start">
-                                <span class="text-accent mr-3">•</span>
+                                <span class="text-accent mr-3">→</span>
                                 <span data-i18n="about.services.1">Product Label & Packaging Design (Concept → Final Production)</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-accent mr-3">•</span>
+                                <span class="text-accent mr-3">→</span>
                                 <span data-i18n="about.services.2">Amazon Listing Images (Main Image, Infographics, Lifestyle etc)</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-accent mr-3">•</span>
+                                <span class="text-accent mr-3">→</span>
                                 <span data-i18n="about.services.3">Amazon EBC & A+ / A+ Premium Content</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-accent mr-3">•</span>
+                                <span class="text-accent mr-3">→</span>
                                 <span data-i18n="about.services.4">Amazon PPC Management & Optimization</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-accent mr-3">•</span>
+                                <span class="text-accent mr-3">→</span>
                                 <span data-i18n="about.services.5">Product Setup & Listing Optimization</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-accent mr-3">•</span>
+                                <span class="text-accent mr-3">→</span>
                                 <span data-i18n="about.services.6">Amazon Storefront Design & Maintenance</span>
                             </li>
                         </ul>
@@ -1022,19 +1014,19 @@
                         <h3 class="text-2xl font-bold text-white mb-6" data-i18n="about.why.title">Why Choose Me?</h3>
                         <ul class="space-y-3 text-white text-lg">
                             <li class="flex items-start">
-                                <span class="text-accent mr-3">•</span>
+                                <span class="text-accent mr-3">→</span>
                                 <span data-i18n="about.why.1">100+ Amazon brands supported successfully</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-accent mr-3">•</span>
+                                <span class="text-accent mr-3">→</span>
                                 <span data-i18n="about.why.2">Design strategies focused on conversion & clarity</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-accent mr-3">•</span>
+                                <span class="text-accent mr-3">→</span>
                                 <span data-i18n="about.why.3">Clean, professional visuals aligned with Amazon guidelines</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-accent mr-3">•</span>
+                                <span class="text-accent mr-3">→</span>
                                 <span data-i18n="about.why.4">Fast communication & reliable delivery</span>
                             </li>
                         </ul>
@@ -1050,11 +1042,11 @@
 
             <!-- Bottom Text -->
             <div class="max-w-5xl mx-auto mt-16 text-center">
-                <p class="text-white text-xl leading-relaxed mb-4" data-i18n="about.bottom.p1">
+                <p class="text-white text-3xl leading-relaxed mb-4" data-i18n="about.bottom.p1">
                     If you want your Amazon product to launch strong, look premium, and sell consistently, you're in the
                     right place.
                 </p>
-                <p class="text-3xl font-bold" data-i18n="about.bottom.p2">
+                <p class="text-accent text-3xl font-bold" data-i18n="about.bottom.p2">
                     Let's turn your idea into a high-performing Amazon listing.
                 </p>
             </div>
@@ -1180,7 +1172,7 @@
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
         <!-- Tooltip Bubble -->
-        <div class="absolute right-20 top-1/2 -translate-y-1/2 bg-primary text-white px-4 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-lg">
+        <div class="absolute right-20 top-1/2 -translate-y-1/2 bg-primary text-white px-4 py-2 rounded-lg whitespace-nowrap opacity-100 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-lg">
             <span data-i18n="whatsapp.tooltip">Let's Talk</span>
             <!-- Arrow -->
             <div class="absolute left-full top-1/2 -translate-y-1/2 border-8 border-transparent border-l-primary"></div>
@@ -1222,7 +1214,7 @@
 
         // Initialize Logo Swiper - Continuous Auto Slide
         const logoSwiper = new Swiper('.logoSwiper', {
-            slidesPerView: 5,
+            slidesPerView: 7,
             spaceBetween: 30,
             loop: true,
             autoplay: {
@@ -1233,15 +1225,15 @@
             allowTouchMove: true,
             breakpoints: {
                 320: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                     spaceBetween: 20
                 },
                 640: {
-                    slidesPerView: 3,
+                    slidesPerView: 4,
                     spaceBetween: 25
                 },
                 1024: {
-                    slidesPerView: 5,
+                    slidesPerView: 7,
                     spaceBetween: 30
                 }
             }

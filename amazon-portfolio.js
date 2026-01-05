@@ -1,8 +1,9 @@
 // Amazon Portfolio Images Configuration
 // Add your image filenames to this array
 const amazonImages = [
-    'p1.jpg',
-    'p2.jpg'
+    'CLG3.jpg',
+    'PC CLG1.jpg',
+    'PC CLG2.jpg'
 ];
 
 // Function to render Amazon portfolio slides
