@@ -2,8 +2,9 @@
 export default {
     // Navigation
     'nav.home': 'Home',
+    'nav.aboutme': 'About Me',
+    'nav.whatcando': 'What Can I Do For You',
     'nav.services': 'Services',
-    'nav.about': 'About',
     'nav.contact': 'Contact',
     
     // Services Dropdown
@@ -54,8 +55,9 @@ export default {
     'services.uses.description': 'A Uses image shows how the product works in real situations, helping customers understand its purpose, visualize the benefits, and feel more confident to buy.',
     'services.lifestyle.title': 'LIFESTYLE IMAGE',
     'services.lifestyle.description': 'A Lifestyle image shows the product in everyday use, helping customers imagine it in their own life, building trust, and increasing the likelihood of purchase.',
-    'services.instruction.title': 'INSTRUCTION IMAGE',
+    'services.instruction1.title': 'INSTRUCTION IMAGE 1',
     'services.instruction.description': 'An Instruction image clearly shows how to use the product, reducing confusion, preventing errors, and increasing customer confidence and satisfaction.',
+    'services.instruction2.title': 'INSTRUCTION IMAGE 2',
     'services.main.title': 'PRODUCT MAIN IMAGE',
     'services.main.description': 'A professional Main Image grabs attention instantly, showcases your product clearly, boosts click-through rates, and sets the foundation for higher sales and trust on Amazon.',
     'services.info.text': 'Each image type serves a specific purpose in the customer journey—from grabbing attention to answering questions and building trust. Together, they create a complete visual story that drives conversions and reduces returns.',
@@ -108,6 +110,7 @@ export default {
     'order.email': 'Email',
     'order.phone': 'Phone',
     'order.whatsapp': 'WhatsApp',
+    'whatsapp.tooltip': 'Let\'s Talk',
     'order.form.name': 'Name',
     'order.form.email': 'Email',
     'order.form.service': 'Service Needed',

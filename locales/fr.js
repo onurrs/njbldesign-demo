@@ -2,8 +2,9 @@
 export default {
     // Navigation
     'nav.home': 'Accueil',
+    'nav.aboutme': 'À Propos De Moi',
+    'nav.whatcando': 'Ce Que Je Peux Faire Pour Vous',
     'nav.services': 'Services',
-    'nav.about': 'À propos',
     'nav.contact': 'Contact',
     
     // Services Dropdown
@@ -54,8 +55,9 @@ export default {
     'services.uses.description': 'Une image d\'utilisation montre comment le produit fonctionne dans des situations réelles, aidant les clients à comprendre son objectif, à visualiser les avantages et à se sentir plus confiants lors de l\'achat.',
     'services.lifestyle.title': 'IMAGE DE STYLE DE VIE',
     'services.lifestyle.description': 'Une image de style de vie montre le produit dans une utilisation quotidienne, aidant les clients à l\'imaginer dans leur propre vie, renforçant la confiance et augmentant la probabilité d\'achat.',
-    'services.instruction.title': 'IMAGE D\'INSTRUCTIONS',
-    'services.instruction.description': 'Une image d\'instructions montre clairement comment utiliser le produit, réduit la confusion, prévient les erreurs et augmente la confiance et la satisfaction des clients.',
+    'services.instruction1.title': 'IMAGE D\'INSTRUCTIONS 1',
+    'services.instruction1.description': 'Une image d\'instructions montre clairement comment utiliser le produit, réduit la confusion, prévient les erreurs et augmente la confiance et la satisfaction des clients.',
+    'services.instruction2.title': 'IMAGE D\'INSTRUCTIONS 2',
     'services.main.title': 'IMAGE PRINCIPALE DU PRODUIT',
     'services.main.description': 'Une image principale professionnelle attire immédiatement l\'attention, présente clairement votre produit, augmente le taux de clics et constitue la base de ventes plus élevées et de confiance sur Amazon.',
     'services.info.text': 'Chaque type d\'image a un objectif spécifique dans le parcours client – d\'attirer l\'attention à répondre aux questions et à renforcer la confiance. Ensemble, ils créent une histoire visuelle complète qui améliore les conversions et réduit les retours.',
@@ -108,6 +110,7 @@ export default {
     'order.email': 'E-mail',
     'order.phone': 'Téléphone',
     'order.whatsapp': 'WhatsApp',
+    'whatsapp.tooltip': 'Parlons',
     'order.form.name': 'Nom',
     'order.form.email': 'E-mail',
     'order.form.service': 'Service requis',

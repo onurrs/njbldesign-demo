@@ -2,8 +2,9 @@
 export default {
     // Navigation
     'nav.home': 'Startseite',
+    'nav.aboutme': 'Über Mich',
+    'nav.whatcando': 'Was Ich Für Sie Tun Kann',
     'nav.services': 'Dienstleistungen',
-    'nav.about': 'Über uns',
     'nav.contact': 'Kontakt',
     
     // Services Dropdown
@@ -54,8 +55,9 @@ export default {
     'services.uses.description': 'Ein Verwendungsbild zeigt, wie das Produkt in realen Situationen funktioniert, hilft Kunden, seinen Zweck zu verstehen, die Vorteile zu visualisieren und sich sicherer beim Kauf zu fühlen.',
     'services.lifestyle.title': 'LIFESTYLE-BILD',
     'services.lifestyle.description': 'Ein Lifestyle-Bild zeigt das Produkt in alltäglicher Verwendung, hilft Kunden, es sich in ihrem eigenen Leben vorzustellen, schafft Vertrauen und erhöht die Kaufwahrscheinlichkeit.',
-    'services.instruction.title': 'ANLEITUNG-BILD',
-    'services.instruction.description': 'Ein Anleitungsbild zeigt klar, wie das Produkt zu verwenden ist, reduziert Verwirrung, verhindert Fehler und erhöht Kundenvertrauen und Zufriedenheit.',
+    'services.instruction1.title': 'ANLEITUNG-BILD 1',
+    'services.instruction1.description': 'Ein Anleitungsbild zeigt klar, wie das Produkt zu verwenden ist, reduziert Verwirrung, verhindert Fehler und erhöht Kundenvertrauen und Zufriedenheit.',
+    'services.instruction2.title': 'ANLEITUNG-BILD 2',
     'services.main.title': 'PRODUKT-HAUPTBILD',
     'services.main.description': 'Ein professionelles Hauptbild erregt sofort Aufmerksamkeit, präsentiert Ihr Produkt klar, steigert die Klickrate und bildet die Grundlage für höhere Verkäufe und Vertrauen bei Amazon.',
     'services.info.text': 'Jeder Bildtyp erfüllt einen spezifischen Zweck in der Customer Journey – vom Erregen von Aufmerksamkeit bis zur Beantwortung von Fragen und dem Aufbau von Vertrauen. Zusammen schaffen sie eine vollständige visuelle Geschichte, die Conversions steigert und Retouren reduziert.',
@@ -108,6 +110,7 @@ export default {
     'order.email': 'E-Mail',
     'order.phone': 'Telefon',
     'order.whatsapp': 'WhatsApp',
+    'whatsapp.tooltip': 'Lass uns reden',
     'order.form.name': 'Name',
     'order.form.email': 'E-Mail',
     'order.form.service': 'Benötigte Dienstleistung',

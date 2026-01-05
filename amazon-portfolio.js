@@ -2,13 +2,7 @@
 // Add your image filenames to this array
 const amazonImages = [
     'p1.jpg',
-    'p1.jpg',
-    'p1.jpg',
-    'p1.jpg',
-    'p1.jpg',
-    'p1.jpg',
-    'p1.jpg',
-    'p1.jpg'
+    'p2.jpg'
 ];
 
 // Function to render Amazon portfolio slides

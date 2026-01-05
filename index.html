@@ -32,6 +32,7 @@
 
         html {
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .hero-section {
@@ -118,7 +119,38 @@
         }
 
         .label-crossfade {
-            animation: crossfade 14s ease-in-out infinite;
+            animation: crossfade 7s ease-in-out infinite;
+        }
+
+        .label-design-container {
+            padding-bottom: 60%; /* Mobile: 5:3 ratio like portfolio */
+        }
+
+        @media (min-width: 768px) {
+            .label-design-container {
+                padding-bottom: 38.4%; /* Desktop: original ratio */
+            }
+        }
+
+        @keyframes wiggle {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(10deg);
+            }
+            75% {
+                transform: rotate(-10deg);
+            }
+        }
+
+        .nav-link {
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            animation: wiggle 0.5s ease-in-out infinite;
         }
 
         .dropdown {
@@ -309,14 +341,16 @@
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <img src="public/logo/company Logo-01.png" alt="NJBL Design" class="h-14 md:h-16">
+                    <img src="public/logo/company Logo-01.png" alt="NJBL Design" class="h-10 md:h-12">
                 </div>
 
-                <!-- Desktop Navigation - Centered -->
-                <div class="hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2 text-xl">
-                    <a href="#home" class="hover:text-accent transition" data-i18n="nav.home">Home</a>
+                <!-- Desktop Navigation - Right Aligned -->
+                <div class="hidden md:flex space-x-6 items-center text-lg">
+                    <a href="#" class="nav-link hover:text-accent transition" data-i18n="nav.home" onclick="scrollToTop(event)">Home</a>
+                    <a href="#about" class="nav-link hover:text-accent transition" data-i18n="nav.aboutme">About Me</a>
+                    <a href="#portfolio" class="nav-link hover:text-accent transition" data-i18n="nav.whatcando">What Can I Do For You</a>
                     <div class="dropdown">
-                        <button class="hover:text-accent transition flex items-center space-x-1">
+                        <button class="nav-link hover:text-accent transition flex items-center space-x-1">
                             <span data-i18n="nav.services">Services</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -332,27 +366,26 @@
                             <a href="#portfolio" data-i18n="services.storefront">Storefront Maintenance</a>
                         </div>
                     </div>
-                    <a href="#about" class="hover:text-accent transition" data-i18n="nav.about">About</a>
-                    <a href="#" class="hover:text-accent transition" data-i18n="nav.contact" onclick="openOrderModal(event)">Contact</a>
-                </div>
+                    <a href="#" class="nav-link hover:text-accent transition" data-i18n="nav.contact" onclick="openOrderModal(event)">Contact</a>
 
-                <!-- Language Button -->
-                <div class="hidden md:flex items-center language-selector">
-                    <button class="language-button flex items-center space-x-2 hover:opacity-80 transition" onclick="toggleLanguageDropdown(event)">
-                        <img src="https://flagcdn.com/w40/us.png" alt="English" class="h-6 w-auto rounded shadow-sm">
-                    </button>
-                    <div class="language-dropdown">
-                        <div class="language-option" onclick="changeLanguage('en')">
-                            <img src="https://flagcdn.com/w40/us.png" alt="English" class="rounded shadow-sm">
-                            <span>English</span>
-                        </div>
-                        <div class="language-option" onclick="changeLanguage('de')">
-                            <img src="https://flagcdn.com/w40/de.png" alt="Deutsch" class="rounded shadow-sm">
-                            <span>Deutsch</span>
-                        </div>
-                        <div class="language-option" onclick="changeLanguage('fr')">
-                            <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="rounded shadow-sm">
-                            <span>Français</span>
+                    <!-- Language Button -->
+                    <div class="language-selector">
+                        <button class="language-button flex items-center space-x-2 hover:opacity-80 transition" onclick="toggleLanguageDropdown(event)">
+                            <img src="https://flagcdn.com/w40/us.png" alt="English" class="h-6 w-auto rounded shadow-sm">
+                        </button>
+                        <div class="language-dropdown">
+                            <div class="language-option" onclick="changeLanguage('en')">
+                                <img src="https://flagcdn.com/w40/us.png" alt="English" class="rounded shadow-sm">
+                                <span>English</span>
+                            </div>
+                            <div class="language-option" onclick="changeLanguage('de')">
+                                <img src="https://flagcdn.com/w40/de.png" alt="Deutsch" class="rounded shadow-sm">
+                                <span>Deutsch</span>
+                            </div>
+                            <div class="language-option" onclick="changeLanguage('fr')">
+                                <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="rounded shadow-sm">
+                                <span>Français</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -368,9 +401,9 @@
             <!-- Mobile Menu -->
             <div id="mobileMenu" class="md:hidden">
                 <div class="flex flex-col space-y-4 pt-4 pb-2">
-                    <a href="#home" class="hover:text-accent transition" data-i18n="nav.home">Home</a>
+                    <a href="#home" class="nav-link hover:text-accent transition" data-i18n="nav.home">Home</a>
                     <div>
-                        <button id="mobileServicesBtn" class="hover:text-accent transition flex items-center justify-between w-full">
+                        <button id="mobileServicesBtn" class="nav-link hover:text-accent transition flex items-center justify-between w-full">
                             <span data-i18n="nav.services">Services</span>
                             <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -415,36 +448,82 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative w-full h-screen overflow-hidden">
+    <!-- Mobile Hero -->
+    <section id="home" class="md:hidden relative w-full overflow-hidden">
+        <!-- Background Images -->
+        <div class="relative w-full mt-20">
+            <img src="public/hero image/hero.jpg" alt="Design illustration"
+                class="w-full h-auto object-contain">
+            
+            <!-- Hero Content -->
+            <div class="absolute bottom-8 -left-6 z-10">
+                <a href="https://www.behance.net/njbldesign" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center gap-0 group transition-all duration-300 hover:scale-105 scale-[0.55]"
+                   style="filter: drop-shadow(0 0 0px rgba(253, 147, 20, 0));">
+                    <!-- Left Circle Container -->
+                    <div class="relative flex items-center justify-center w-16 h-16 bg-accent rounded-full transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(253,147,20,0.8)]">
+                        <!-- Inner Circle -->
+                        <div class="w-10 h-10 bg-primary rounded-full"></div>
+                    </div>
+                    
+                    <!-- Right Button -->
+                    <div class="bg-accent px-8 py-4 rounded-3xl ml-2 pl-6 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(253,147,20,0.8)]">
+                        <span class="text-primary font-bold text-xl">Portfolio</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desktop Hero -->
+    <section id="home" class="hidden md:block relative w-full h-screen overflow-hidden">
         <!-- Background Images -->
         <div class="absolute inset-0 w-full h-full">
-            <img src="public/hero image/updated hero image.jpg" alt="Design illustration"
-                class="w-full h-[92%] mt-20 object-cover">
+            <img src="public/hero image/hero.jpg" alt="Design illustration"
+                class="w-full h-auto mt-20 object-contain">
         </div>
 
-        
+        <!-- Hero Content -->
+        <div class="relative z-10 flex items-end justify-start h-full pb-24 pl-24">
+            <a href="https://www.behance.net/njbldesign" target="_blank" rel="noopener noreferrer" 
+               class="flex items-center gap-0 group transition-all duration-300 hover:scale-105"
+               style="filter: drop-shadow(0 0 0px rgba(253, 147, 20, 0));">
+                <!-- Left Circle Container -->
+                <div class="relative flex items-center justify-center w-24 h-24 bg-accent rounded-full transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(253,147,20,0.8)]">
+                    <!-- Inner Circle -->
+                    <div class="w-14 h-14 bg-primary rounded-full"></div>
+                </div>
+                
+                <!-- Right Button -->
+                <div class="bg-accent px-12 py-6 rounded-3xl ml-3 pl-10 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(253,147,20,0.8)]">
+                    <span class="text-primary font-bold text-3xl">Portfolio</span>
+                </div>
+            </a>
+        </div>
     </section>
 
     <!-- Value Proposition Section -->
     <section class="py-16 bg-primary">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-                <span class="text-accent" data-i18n="value.title1">Why Your Business Deserves a Strategic,</span><br>
-                <span class="text-accent" data-i18n="value.title2">Sales-Driven Design?</span>
-            </h2>
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-left mb-12 text-white">
+                    <span data-i18n="value.title1">Why Your Business Deserves a Strategic,</span><br>
+                    <span data-i18n="value.title2">Sales-Driven Design?</span>
+                </h2>
+            </div>
             <div class="max-w-5xl mx-auto space-y-6 text-white">
-                <p class="text-justify leading-relaxed text-xl" data-i18n="value.p1">
+                <p class="text-left md:text-justify leading-relaxed text-xl" data-i18n="value.p1">
                     Design isn't just about looking good — it's about selling smarter. A sales-driven design uses
                     customer psychology, data-driven layouts, and strong visual hierarchy to quickly guide visitors from
                     interest to purchase. This approach transforms version rates and consistent long-term growth.
                 </p>
-                <p class="text-justify leading-relaxed text-xl" data-i18n="value.p2">
+                <p class="text-left md:text-justify leading-relaxed text-xl" data-i18n="value.p2">
                     On Amazon and other e-commerce platforms, this impact is even stronger. Professional strategic
                     visuals boost click-through, improve ranking, and help your product stand out in crowded
                     marketplaces — often leading to conversion rate increases of 70%-80% when the design is fully
                     optimized.
                 </p>
-                <p class="text-justify leading-relaxed font-semibold text-white text-xl" data-i18n="value.p3">
+                <p class="text-left md:text-justify leading-relaxed font-semibold text-white text-xl" data-i18n="value.p3">
                     If you're ready to increase conversions and position your brand as the clear choice, now is the time
                     to upgrade your visuals and take the lead.
                 </p>
@@ -456,11 +535,6 @@
     <section id="portfolio" class="py-16 bg-gradient-to-b from-primary to-gray-900">
         <div class="container mx-auto px-6">
             <div class="max-w-7xl mx-auto">
-                <div class="flex items-center space-x-4 mb-8">
-                    <div class="bg-accent text-primary font-bold px-4 py-2 rounded text-sm" data-i18n="portfolio.tag">NJBL</div>
-                    <h3 class="text-2xl font-bold text-accent" data-i18n="portfolio.title">AMAZON LISTING</h3>
-                </div>
-
                 <!-- Swiper Carousel -->
                 <div class="relative">
                     <div class="swiper portfolioSwiper">
@@ -484,39 +558,39 @@
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/amazon-logo-on-transparent-background-free-vector.png"
                                 alt="Amazon"
-                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/EBay_logo.png" alt="eBay"
-                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/Shopify_logo_2018.svg.png" alt="Shopify"
-                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/Aliexpress_logo.svg.png" alt="AliExpress"
-                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/Bol.com_2019_logo.svg.png" alt="Bol.com"
-                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/Etsy_logo.svg.png" alt="Etsy"
-                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/Trendyol_online.png" alt="Trendyol"
-                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/walmart-logo-png_seeklogo-151324.png" alt="Walmart"
-                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                         <div class="swiper-slide flex items-center justify-center">
                             <img src="public/e-commerce logo/JB_Hi-Fi-Logo.wine.png" alt="JB Hi-Fi"
-                                class="h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
+                                class="h-6 md:h-12 object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition">
                         </div>
                     </div>
                 </div>
@@ -527,14 +601,27 @@
     <!-- Services Section -->
     <section id="services" class="py-16 bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-5xl font-bold text-center mb-12 text-accent leading-tight max-w-5xl mx-auto" data-i18n="services.label.title">
-                Upgrade your product's look with label designs that grab attention, build trust, and drive higher
-                conversions
-            </h2>
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-left mb-12 text-white leading-tight" data-i18n="services.label.title">
+                    Upgrade your product's look with label designs that grab attention, build trust, and drive higher
+                    conversions
+                </h2>
+            </div>
 
             <!-- Label Design Images with Crossfade -->
-            <div class="relative w-full mx-auto mb-12 px-4">
-                <div class="relative w-full" style="padding-bottom: 38.4%; /* 861/2242 = 0.384 */">
+            <!-- Mobile Images -->
+            <div class="relative w-full mx-auto mb-12 px-4 md:hidden">
+                <div class="relative w-full label-design-container">
+                    <img src="public/amazon/p1.jpg" alt="Label Design 1 Mobile"
+                        class="absolute inset-0 w-full h-full object-contain">
+                    <img src="public/amazon/p2.jpg" alt="Label Design 2 Mobile"
+                        class="absolute inset-0 w-full h-full object-contain label-crossfade" style="z-index: 1;">
+                </div>
+            </div>
+            
+            <!-- Desktop Images -->
+            <div class="relative w-full mx-auto mb-12 px-4 hidden md:block">
+                <div class="relative w-full label-design-container">
                     <img src="public/label-design/design1.png" alt="Label Design 1"
                         class="absolute inset-0 w-full h-full object-contain">
                     <img src="public/label-design/design2.png" alt="Label Design 2"
@@ -544,7 +631,7 @@
 
             <!-- Description Text -->
             <div class="max-w-5xl mx-auto text-center">
-                <p class="text-white text-xl leading-relaxed text-justify" data-i18n="services.label.description">
+                <p class="text-white text-xl leading-relaxed text-left md:text-justify" data-i18n="services.label.description">
                     Boost your Amazon sales with a high-quality product label. I create premium, conversion-focused
                     designs backed by 7–8 years of experience with Amazon sellers. A professional label instantly builds
                     trust, makes your product stand out, and turns more shoppers into buyers. If you want a label that
@@ -557,18 +644,20 @@
     <!-- Amazon Visuals Section -->
     <section class="py-16 bg-primary">
         <div class="container mx-auto px-6">
-            <h2 class="text-2xl md:text-5xl font-bold text-center mb-8 text-accent" data-i18n="services.amazon.title">Conversion-Focused Amazon Visuals
-            </h2>
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-5xl font-bold text-left mb-8 text-white" data-i18n="services.amazon.title">Conversion-Focused Amazon Visuals
+                </h2>
+            </div>
             <div class="max-w-5xl mx-auto mb-12">
-                <p class="text-white text-base md:text-xl leading-relaxed mb-6 text-justify" data-i18n="services.amazon.p1">
+                <p class="text-white text-base md:text-xl leading-relaxed mb-6 text-left md:text-justify" data-i18n="services.amazon.p1">
                     I create high-converting Amazon listing images designed to boost visibility, trust, and sales.
                 </p>
-                <p class="text-white text-base md:text-xl leading-relaxed mb-6 text-justify" data-i18n="services.amazon.p2">
+                <p class="text-white text-base md:text-xl leading-relaxed mb-6 text-left md:text-justify" data-i18n="services.amazon.p2">
                     With a strategic approach to Amazon's competitive marketplace, I deliver a complete set of optimized
                     visuals—including Product Main Image, Product Kit/Included Items Image, Features Highlight Image,
                     Comparison Image, Infographic Image, Usage/Benefits Image, Lifestyle Image, and Instruction Image.
                 </p>
-                <p class="text-white text-base md:text-xl leading-relaxed text-justify" data-i18n="services.amazon.p3">
+                <p class="text-white text-base md:text-xl leading-relaxed text-left md:text-justify" data-i18n="services.amazon.p3">
                     Every image is crafted to communicate value instantly, answer customer questions, and influence
                     purchase decisions.
                 </p>
@@ -582,10 +671,12 @@
                         <img src="public/product/product1.jpg" alt="Kit Include Image"
                             class="w-full h-full object-cover">
                     </div>
-                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
-                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
-                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.kit.title">KIT
-                            INCLUDE<br>IMAGE</h3>
+                    <div class="bg-accent flex items-stretch rounded-b-lg w-full">
+                        <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
+                        <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.kit.title">KIT
+                                INCLUDE<br>IMAGE</h3>
+                        </div>
                     </div>
                     <!-- Hover Overlay -->
                     <div
@@ -605,10 +696,12 @@
                     <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
                         <img src="public/product/product2.jpg" alt="Image 2" class="w-full h-full object-cover">
                     </div>
-                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
-                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
-                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.features.title">
-                            FEATURES<br>IMAGE</h3>
+                    <div class="bg-accent flex items-stretch rounded-b-lg w-full">
+                        <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
+                        <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.features.title">
+                                FEATURES<br>IMAGE</h3>
+                        </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
@@ -625,10 +718,12 @@
                     <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
                         <img src="public/product/product3.jpg" alt="Image 3" class="w-full h-full object-cover">
                     </div>
-                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
-                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
-                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.comparison.title">
-                            COMPARISON<br>IMAGE</h3>
+                    <div class="bg-accent flex items-stretch rounded-b-lg w-full">
+                        <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
+                        <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.comparison.title">
+                                COMPARISON<br>IMAGE</h3>
+                        </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
@@ -646,10 +741,12 @@
                     <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
                         <img src="public/product/product4.jpg" alt="Image 4" class="w-full h-full object-cover">
                     </div>
-                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
-                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
-                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.infographic.title">
-                            INFOGRAPHIC<br>IMAGE</h3>
+                    <div class="bg-accent flex items-stretch rounded-b-lg w-full">
+                        <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
+                        <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.infographic.title">
+                                INFOGRAPHIC<br>IMAGE</h3>
+                        </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
@@ -666,10 +763,12 @@
                     <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
                         <img src="public/product/product5.jpg" alt="Image 5" class="w-full h-full object-cover">
                     </div>
-                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
-                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
-                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.uses.title">PRODUCT
-                            USES<br>IMAGE</h3>
+                    <div class="bg-accent flex items-stretch rounded-b-lg w-full">
+                        <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
+                        <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.uses.title">PRODUCT
+                                USES<br>IMAGE</h3>
+                        </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
@@ -686,10 +785,12 @@
                     <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
                         <img src="public/product/product6.jpg" alt="Image 6" class="w-full h-full object-cover">
                     </div>
-                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
-                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
-                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.lifestyle.title">
-                            LIFESTYLE<br>IMAGE</h3>
+                    <div class="bg-accent flex items-stretch rounded-b-lg w-full">
+                        <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
+                        <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.lifestyle.title">
+                                LIFESTYLE<br>IMAGE</h3>
+                        </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
@@ -706,15 +807,17 @@
                     <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
                         <img src="public/product/product7.jpg" alt="Image 7" class="w-full h-full object-cover">
                     </div>
-                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
-                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
-                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.instruction.title">INSTRUCTION
-                            ONE<br>IMAGE</h3>
+                    <div class="bg-accent flex items-stretch rounded-b-lg w-full">
+                        <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
+                        <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.instruction1.title">INSTRUCTION
+                                <br>IMAGE</h3>
+                        </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
                         <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.instruction.title">INSTRUCTION
-                            ONE<br>IMAGE</h3>
+                            <br>IMAGE</h3>
                         <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.instruction.description">
                             An Instruction image clearly shows how to use the product, reducing confusion, preventing
                             errors, and increasing customer confidence and satisfaction.</p>
@@ -726,10 +829,12 @@
                     <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
                         <img src="public/product/product8.jpg" alt="Image 8" class="w-full h-full object-cover">
                     </div>
-                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
-                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
-                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.instruction.title">
-                            INSTRUCTIONS<br>IMAGE</h3>
+                    <div class="bg-accent flex items-stretch rounded-b-lg w-full">
+                        <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
+                        <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.instruction2.title">
+                                INSTRUCTIONS<br>IMAGE</h3>
+                        </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
@@ -746,10 +851,12 @@
                     <div class="relative overflow-hidden rounded-t-lg w-full aspect-square">
                         <img src="public/product/product9.jpg" alt="Image 9" class="w-full h-full object-cover">
                     </div>
-                    <div class="bg-accent py-2 px-2 md:py-4 md:px-6 flex items-center rounded-b-lg w-full">
-                        <div class="w-1 h-6 md:w-1.5 md:h-12 bg-gray-300 mr-2 md:mr-4"></div>
-                        <h3 class="text-white font-bold text-[0.6rem] md:text-base leading-tight uppercase" data-i18n="services.main.title">PRODUCT
-                            MAIN<br>IMAGE</h3>
+                    <div class="bg-accent flex items-stretch rounded-b-lg w-full">
+                        <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
+                        <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.main.title">PRODUCT
+                                MAIN<br>IMAGE</h3>
+                        </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
@@ -763,7 +870,7 @@
             </div>
 
             <!-- Bottom Info Box -->
-            <div class="max-w-6xl mx-auto mt-12 bg-gray-700 rounded-lg p-8">
+            <div class="max-w-6xl mx-auto mt-12 bg-accent rounded-lg p-8">
                 <p class="text-white text-lg leading-relaxed text-center" data-i18n="services.info.text">
                     Each image type serves a specific purpose in the customer journey—from grabbing attention to
                     answering questions and building trust. Together, they create a complete visual story that drives
@@ -857,8 +964,8 @@
     <!-- About Section -->
     <section id="about" class="py-16 bg-primary">
         <div class="container mx-auto px-6">
-            <div class="max-w-5xl mx-auto text-justify">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-accent text-center" data-i18n="about.title">About me</h2>
+            <div class="max-w-5xl mx-auto text-left md:text-justify">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white text-left" data-i18n="about.title">About me</h2>
                 <p class="text-white text-xl leading-relaxed mb-4" data-i18n="about.p1">
                     Hi, I'm NaJi, your Amazon design expert with 4+ years of professional experience in design. Over the
                     years, I've helped 100+ Amazon sellers create high-converting product label designs, listings, and
@@ -876,13 +983,13 @@
             </div>
 
             <!-- Two Column Section -->
-            <div class="max-w-5xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            <div class="max-w-5xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
                 <!-- Left Column -->
-                <div>
+                <div class="md:col-span-2">
                     <!-- What I Can Do for You -->
                     <div>
-                        <h3 class="text-2xl font-bold text-accent mb-6" data-i18n="about.services.title">What I Can Do for You:</h3>
-                        <ul class="space-y-6 text-white text-lg">
+                        <h3 class="text-2xl font-bold text-white mb-6" data-i18n="about.services.title">What I Can Do for You:</h3>
+                        <ul class="space-y-3 text-white text-lg">
                             <li class="flex items-start">
                                 <span class="text-accent mr-3">•</span>
                                 <span data-i18n="about.services.1">Product Label & Packaging Design (Concept → Final Production)</span>
@@ -912,8 +1019,8 @@
 
                     <!-- Why Choose Me -->
                     <div class="mt-16">
-                        <h3 class="text-2xl font-bold text-accent mb-6" data-i18n="about.why.title">Why Choose Me?</h3>
-                        <ul class="space-y-6 text-white text-lg">
+                        <h3 class="text-2xl font-bold text-white mb-6" data-i18n="about.why.title">Why Choose Me?</h3>
+                        <ul class="space-y-3 text-white text-lg">
                             <li class="flex items-start">
                                 <span class="text-accent mr-3">•</span>
                                 <span data-i18n="about.why.1">100+ Amazon brands supported successfully</span>
@@ -935,9 +1042,9 @@
                 </div>
 
                 <!-- Right Column - Image -->
-                <div class="flex items-start justify-end">
+                <div class="md:col-span-1 flex items-start justify-end">
                     <img src="public/hero image/njbl.jpeg" alt="NaJi"
-                        class="w-[85%] h-auto object-cover rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                        class="w-full h-auto object-cover rounded-3xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
                 </div>
             </div>
 
@@ -947,7 +1054,7 @@
                     If you want your Amazon product to launch strong, look premium, and sell consistently, you're in the
                     right place.
                 </p>
-                <p class="text-2xl font-bold" data-i18n="about.bottom.p2">
+                <p class="text-3xl font-bold" data-i18n="about.bottom.p2">
                     Let's turn your idea into a high-performing Amazon listing.
                 </p>
             </div>
@@ -959,7 +1066,8 @@
         <div class="container mx-auto px-6">
             <div class="text-center">
                 <button id="orderNowBtn"
-                    class="bg-white text-accent font-bold text-2xl px-12 py-4 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+                    class="bg-accent text-primary font-bold px-10 py-3 rounded-lg hover:shadow-[0_0_30px_rgba(253,147,20,0.8)] hover:scale-105 transition-all duration-300"
+                    style="font-size: 2.5rem;"
                     data-i18n="order.button">
                     Order Now!!
                 </button>
@@ -1067,10 +1175,16 @@
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/00905056779458" target="_blank" 
-       class="fixed bottom-6 right-6 w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 z-50 group">
+       class="fixed bottom-12 right-12 w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 z-50 group">
         <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
+        <!-- Tooltip Bubble -->
+        <div class="absolute right-20 top-1/2 -translate-y-1/2 bg-primary text-white px-4 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-lg">
+            <span data-i18n="whatsapp.tooltip">Let's Talk</span>
+            <!-- Arrow -->
+            <div class="absolute left-full top-1/2 -translate-y-1/2 border-8 border-transparent border-l-primary"></div>
+        </div>
     </a>
 
     <!-- Footer -->
@@ -1230,8 +1344,15 @@
             document.body.style.overflow = 'hidden';
         }
 
-        // Make openOrderModal globally available
+        // Function to scroll to top
+        function scrollToTop(event) {
+            if (event) event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Make functions globally available
         window.openOrderModal = openOrderModal;
+        window.scrollToTop = scrollToTop;
 
         orderNowBtn.addEventListener('click', () => {
             orderModal.classList.remove('hidden');
