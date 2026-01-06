@@ -34,7 +34,7 @@ export default {
     
     // Services Section - Label Design
     'services.label.title': 'Améliorez l\'apparence de votre produit avec des conceptions d\'étiquettes qui attirent l\'attention, renforcent la confiance et génèrent des conversions plus élevées',
-    'services.label.description': 'Boostez vos ventes Amazon avec une étiquette de produit de qualité supérieure. Je crée des designs premium axés sur la conversion, soutenus par 7-8 ans d\'expérience avec les vendeurs Amazon. Une étiquette professionnelle crée instantanément de la confiance, fait ressortir votre produit et transforme plus de navigateurs en acheteurs. Si vous voulez une étiquette qui vend – pas seulement qui a l\'air bien – je suis là pour vous.',
+    'services.label.description': 'Boostez vos ventes Amazon avec une étiquette de produit de qualité supérieure. Je crée des designs premium axés sur la conversion, soutenus par 6+ ans d\'expérience avec les vendeurs Amazon. Une étiquette professionnelle crée instantanément de la confiance, fait ressortir votre produit et transforme plus de navigateurs en acheteurs. Si vous voulez une étiquette qui vend – pas seulement qui a l\'air bien – je suis là pour vous.',
     
     // Amazon Visuals Section
     'services.amazon.title': 'Visuels Amazon axés sur la conversion',
@@ -86,7 +86,7 @@ export default {
     
     // About Section
     'about.title': 'À propos de moi',
-    'about.p1': 'Bonjour, je suis NaJi, votre expert en design Amazon avec plus de 4 ans d\'expérience professionnelle en design. Au fil des ans, j\'ai aidé plus de 100 vendeurs Amazon à créer des conceptions d\'étiquettes de produits, des listings et des visuels de marque à forte conversion qui génèrent plus de clics et transforment les vues en ventes.',
+    'about.p1': 'Bonjour, je suis NaJi, votre expert en design Amazon avec plus de 6 ans d\'expérience professionnelle en design. Au fil des ans, j\'ai aidé plus de 100 vendeurs Amazon à créer des conceptions d\'étiquettes de produits, des listings et des visuels de marque à forte conversion qui génèrent plus de clics et transforment les vues en ventes.',
     'about.p2': 'J\'ai une solide formation en design graphique et marketing numérique, ce qui me permet de combiner la créativité avec des stratégies basées sur les données. Mon travail ne se concentre pas seulement sur l\'esthétique, mais sur l\'amélioration des conversions et de la confiance dans la marque sur Amazon.',
     'about.p3': 'Que vous lanciez votre premier produit ou que vous étendiez une marque Amazon existante, je vous soutiens du concept au lancement complet du marché, transformant les idées en designs à forte conversion.',
     'about.services.title': 'Ce que je peux faire pour vous:',

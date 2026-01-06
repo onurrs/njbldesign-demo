@@ -34,7 +34,7 @@ export default {
     
     // Services Section - Label Design
     'services.label.title': 'Verbessern Sie das Aussehen Ihres Produkts mit Etikett-Designs, die Aufmerksamkeit erregen, Vertrauen aufbauen und höhere Conversions erzielen',
-    'services.label.description': 'Steigern Sie Ihre Amazon-Verkäufe mit einem hochwertigen Produktetikett. Ich erstelle Premium-, Conversion-fokussierte Designs, unterstützt durch 7–8 Jahre Erfahrung mit Amazon-Verkäufern. Ein professionelles Etikett schafft sofort Vertrauen, hebt Ihr Produkt hervor und verwandelt mehr Käufer in Kunden. Wenn Sie ein Etikett wollen, das verkauft – nicht nur gut aussieht – bin ich für Sie da.',
+    'services.label.description': 'Steigern Sie Ihre Amazon-Verkäufe mit einem hochwertigen Produktetikett. Ich erstelle Premium-, Conversion-fokussierte Designs, unterstützt durch 6+ Jahre Erfahrung mit Amazon-Verkäufern. Ein professionelles Etikett schafft sofort Vertrauen, hebt Ihr Produkt hervor und verwandelt mehr Käufer in Kunden. Wenn Sie ein Etikett wollen, das verkauft – nicht nur gut aussieht – bin ich für Sie da.',
     
     // Amazon Visuals Section
     'services.amazon.title': 'Conversion-fokussierte Amazon-Visuals',
@@ -86,7 +86,7 @@ export default {
     
     // About Section
     'about.title': 'Über mich',
-    'about.p1': 'Hallo, ich bin NaJi, Ihr Amazon-Design-Experte mit über 4 Jahren professioneller Erfahrung im Design. Im Laufe der Jahre habe ich über 100 Amazon-Verkäufern geholfen, hochkonvertierende Produktetikett-Designs, Listings und Markenvisuals zu erstellen, die mehr Klicks generieren und Ansichten in Verkäufe verwandeln.',
+    'about.p1': 'Hallo, ich bin NaJi, Ihr Amazon-Design-Experte mit über 6 Jahren professioneller Erfahrung im Design. Im Laufe der Jahre habe ich über 100 Amazon-Verkäufern geholfen, hochkonvertierende Produktetikett-Designs, Listings und Markenvisuals zu erstellen, die mehr Klicks generieren und Ansichten in Verkäufe verwandeln.',
     'about.p2': 'Ich habe einen starken Bildungshintergrund in Grafikdesign und digitalem Marketing, was es mir ermöglicht, Kreativität mit datengesteuerten Strategien zu kombinieren. Meine Arbeit konzentriert sich nicht nur auf Ästhetik, sondern auf die Steigerung von Conversions und Markenvertrauen bei Amazon.',
     'about.p3': 'Egal, ob Sie Ihr erstes Produkt auf den Markt bringen oder eine bestehende Amazon-Marke skalieren, ich unterstütze Sie vom Konzept bis zur vollständigen Markteinführung und verwandle Ideen in hochkonvertierende Designs.',
     'about.services.title': 'Was ich für Sie tun kann:',

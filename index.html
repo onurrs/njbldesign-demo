@@ -337,7 +337,7 @@
 </div>
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 bg-primary border-b border-gray-700 z-50">
-        <div class="container mx-auto px-6 py-4">
+        <div class="container mx-auto px-6 py-7">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center">
@@ -346,11 +346,11 @@
 
                 <!-- Desktop Navigation - Right Aligned -->
                 <div class="hidden md:flex space-x-6 items-center text-lg">
-                    <a href="#" class="nav-link hover:text-accent transition" data-i18n="nav.home" onclick="scrollToTop(event)">Home</a>
-                    <a href="#about" class="nav-link hover:text-accent transition" data-i18n="nav.aboutme">About Me</a>
-                    <a href="#portfolio" class="nav-link hover:text-accent transition" data-i18n="nav.whatcando">What Can I Do For You</a>
+                    <a href="#" class="nav-link text-2xl hover:text-accent transition" onclick="scrollToTop(event)">home</a>
+                    <a href="#about" class="nav-link text-2xl hover:text-accent transition" >about me</a>
+                    <a href="#projectworkflow" class="nav-link text-2xl hover:text-accent transition">project workflow</a>
                     <div class="dropdown">
-                        <button class="nav-link hover:text-accent transition flex items-center space-x-1">
+                        <button class="nav-link text-2xl hover:text-accent transition flex items-center space-x-1">
                             <span data-i18n="nav.services">Services</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -366,7 +366,8 @@
                             <a data-i18n="services.storefront" onclick="openOrderModal(event)">Storefront Maintenance</a>
                         </div>
                     </div>
-                    <a href="https://wa.me/00905056779458" target="_blank" class="nav-link hover:text-accent transition" data-i18n="nav.contact">Contact</a>
+                    <a href="https://wa.me/00905056779458" target="_blank" class="nav-link text-2xl hover:text-accent transition">let's talk</a>
+                    <a href="#portfolio" class="nav-link text-2xl bg-accent p-1">portfolio</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -612,7 +613,7 @@
             <div class="w-full mx-auto mt-12 bg-accent rounded-lg p-8">
                 <p class="text-white text-2xl leading-relaxed text-left md:text-center" data-i18n="services.label.description">
                     Boost your Amazon sales with a high-quality product label. I create premium, conversion-focused
-                    designs backed by 7–8 years of experience with Amazon sellers. A professional label instantly builds
+                    designs backed by 6+ years of experience with Amazon sellers. A professional label instantly builds
                     trust, makes your product stand out, and turns more shoppers into buyers. If you want a label that
                     sells—not just looks good—I've got you.
                 </p>
@@ -839,8 +840,8 @@
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
-                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.comparison.title">
-                            COMPARISON<br>IMAGE</h3>
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase">
+                            PRODUCT MAIN IMAGE</h3>
                         <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.main.description">
                             A professional Main Image grabs attention instantly, showcases your product clearly, boosts
                             click-through rates, and sets the foundation for higher sales and trust on Amazon.</p>
@@ -849,18 +850,18 @@
             </div>
 
             <!-- Bottom Info Box -->
-            <div class="max-w-6xl mx-auto mt-12 bg-accent rounded-lg p-8">
+            <div class="max-w-7xl mx-auto mt-12 bg-accent rounded-lg p-8">
                 <p class="text-white text-2xl leading-relaxed text-center" data-i18n="services.info.text">
                     Each image type serves a specific purpose in the customer journey—from grabbing attention to
                     answering questions and building trust. Together, they create a complete visual story that drives
-                    conversions and reduces returns.
+                    conversions.
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Workflow Section -->
-    <section class="py-20 bg-gray-900">
+    <section class="py-20 bg-gray-900" id="projectworkflow">
         <div class="container mx-auto px-6">
             <!-- Section Header -->
             <div class="max-w-4xl mx-auto mb-16 text-center">
@@ -959,7 +960,7 @@ and final adjustments are made before approval.
             <div class="max-w-5xl mx-auto text-left md:text-justify">
                 <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white text-left" data-i18n="about.title">About me</h2>
                 <p class="text-white text-xl leading-relaxed mb-4" data-i18n="about.p1">
-                    Hi, I'm NaJi, your Amazon design expert with 4+ years of professional experience in design. Over the
+                    Hi, I'm NaJi, your Amazon design expert with 6+ years of professional experience in design. Over the
                     years, I've helped 100+ Amazon sellers create high-converting product label designs, listings, and
                     brand visuals that drive more clicks and turn views into sales.
                 </p>
@@ -1058,8 +1059,8 @@ and final adjustments are made before approval.
         <div class="container mx-auto px-6">
             <div class="text-center">
                 <button id="orderNowBtn"
-                    class="bg-accent text-primary font-bold px-10 py-3 rounded-lg hover:shadow-[0_0_30px_rgba(253,147,20,0.8)] hover:scale-105 transition-all duration-300"
-                    style="font-size: 2.5rem;"
+                    class="bg-accent text-primary font-bold px-8 py-2.5 rounded-lg hover:shadow-[0_0_30px_rgba(253,147,20,0.8)] hover:scale-105 transition-all duration-300"
+                    style="font-size: 2rem;"
                     data-i18n="order.button">
                     Order Now!!
                 </button>
@@ -1311,8 +1312,8 @@ and final adjustments are made before approval.
                     const targetId = this.getAttribute('href').substring(1);
                     let offsetPosition = target.getBoundingClientRect().top + window.pageYOffset;
                     
-                    // Add 5% viewport height offset for portfolio and about sections
-                    if (targetId === 'portfolio' || targetId === 'about') {
+                    // Add 5% viewport height offset for portfolio, about and projectworkflow sections
+                    if (targetId === 'portfolio' || targetId === 'about' || targetId === 'projectworkflow') {
                         offsetPosition -= window.innerHeight * 0.05;
                     }
                     

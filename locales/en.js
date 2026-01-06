@@ -34,7 +34,7 @@ export default {
     
     // Services Section - Label Design
     'services.label.title': 'Upgrade your product\'s look with label designs that grab attention, build trust, and drive higher conversions',
-    'services.label.description': 'Boost your Amazon sales with a high-quality product label. I create premium, conversion-focused designs backed by 7–8 years of experience with Amazon sellers. A professional label instantly builds trust, makes your product stand out, and turns more shoppers into buyers. If you want a label that sells—not just looks good—I\'ve got you.',
+    'services.label.description': 'Boost your Amazon sales with a high-quality product label. I create premium, conversion-focused designs backed by 6+ years of experience with Amazon sellers. A professional label instantly builds trust, makes your product stand out, and turns more shoppers into buyers. If you want a label that sells—not just looks good—I\'ve got you.',
     
     // Amazon Visuals Section
     'services.amazon.title': 'Conversion-Focused Amazon Visuals',
@@ -60,7 +60,7 @@ export default {
     'services.instruction2.title': 'INSTRUCTION IMAGE 2',
     'services.main.title': 'PRODUCT MAIN IMAGE',
     'services.main.description': 'A professional Main Image grabs attention instantly, showcases your product clearly, boosts click-through rates, and sets the foundation for higher sales and trust on Amazon.',
-    'services.info.text': 'Each image type serves a specific purpose in the customer journey—from grabbing attention to answering questions and building trust. Together, they create a complete visual story that drives conversions and reduces returns.',
+    'services.info.text': 'Each image type serves a specific purpose in the customer journey—from grabbing attention to answering questions and building trust. Together, they create a complete visual story that drives conversions.',
     
     // Label Design Section
     'label.tag': 'NJBL',
@@ -86,7 +86,7 @@ export default {
     
     // About Section
     'about.title': 'About me',
-    'about.p1': 'Hi, I\'m NaJi, your Amazon design expert with 4+ years of professional experience in design. Over the years, I\'ve helped 100+ Amazon sellers create high-converting product label designs, listings, and brand visuals that drive more clicks and turn views into sales.',
+    'about.p1': 'Hi, I\'m NaJi, your Amazon design expert with 6+ years of professional experience in design. Over the years, I\'ve helped 100+ Amazon sellers create high-converting product label designs, listings, and brand visuals that drive more clicks and turn views into sales.',
     'about.p2': 'I have a strong educational background in Graphic Design and Digital Marketing, which allows me to combine creativity with data-driven strategies. My work focuses not just on aesthetics, but on boosting conversions and brand trust on Amazon.',
     'about.p3': 'Whether you\'re launching your first product or scaling an existing Amazon brand, I support you from concept to full launch, transforming ideas into high-converting designs.',
     'about.services.title': 'What I Can Do for You:',

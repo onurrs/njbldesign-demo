@@ -2,8 +2,8 @@
 // Add your image filenames to this array
 const amazonImages = [
     'CLG3.jpg',
-    'PC CLG1.jpg',
-    'PC CLG2.jpg'
+    'CLG1.jpg',
+    'CLG2.jpg'
 ];
 
 // Function to render Amazon portfolio slides
