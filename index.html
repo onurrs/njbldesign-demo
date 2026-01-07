@@ -408,27 +408,6 @@
                     </div>
                     <a href="https://wa.me/00905056779458" target="_blank" class="nav-link hover:text-accent transition">let's talk</a>
                     <a href="#portfolio" class="bg-white text-primary px-6 py-2 rounded-lg hover:bg-accent transition inline-block">Portfolio</a>
-
-                    <!-- Language Button for Mobile -->
-                    <div class="pt-2 border-t border-gray-700 language-selector">
-                        <button class="language-button flex items-center space-x-2 hover:opacity-80 transition" onclick="toggleLanguageDropdown(event)">
-                            <img src="https://flagcdn.com/w40/us.png" alt="English" class="h-6 w-auto rounded shadow-sm">
-                        </button>
-                        <div class="language-dropdown">
-                            <div class="language-option" onclick="changeLanguage('en')">
-                                <img src="https://flagcdn.com/w40/us.png" alt="English" class="rounded shadow-sm">
-                                <span>English</span>
-                            </div>
-                            <div class="language-option" onclick="changeLanguage('de')">
-                                <img src="https://flagcdn.com/w40/de.png" alt="Deutsch" class="rounded shadow-sm">
-                                <span>Deutsch</span>
-                            </div>
-                            <div class="language-option" onclick="changeLanguage('fr')">
-                                <img src="https://flagcdn.com/w40/fr.png" alt="Français" class="rounded shadow-sm">
-                                <span>Français</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1319,7 +1298,8 @@ and final adjustments are made before approval.
         const testimonialSwiper = new Swiper('.testimonialSwiper', {
             slidesPerView: 1,
             spaceBetween: 30,
-            loop: true,
+            loop: false,
+            rewind: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
