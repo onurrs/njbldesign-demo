@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
 
 <head>
     <meta charset="UTF-8">
@@ -366,7 +366,7 @@
 </head>
 
 <body class="text-white font-sans">
-
+    <main></main>
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 bg-primary border-b border-gray-700 z-50">
         <div class="container mx-auto px-6 py-7 md:py-5">
@@ -513,9 +513,10 @@
     <!-- Hero Section -->
     <!-- Mobile Hero -->
     <section id="home" class="md:hidden relative w-full overflow-hidden">
+        <h1 class="sr-only">NJBL Design - Professional Amazon Product Photography & Design Services</h1>
         <!-- Background Images -->
         <div class="relative w-full mt-24">
-            <img src="public/hero image/hero.jpg" alt="Design illustration" class="w-full h-auto object-contain">
+            <img src="public/hero image/hero.jpg" alt="Professional Amazon Product Photography and Design Services by NJBL Design" class="w-full h-auto object-contain">
         </div>
     </section>
 
@@ -523,7 +524,7 @@
     <section id="home" class="hidden md:block relative w-full h-screen overflow-hidden">
         <!-- Background Images -->
         <div class="absolute inset-0 w-full h-full">
-            <img src="public/hero image/hero.jpg" alt="Design illustration" class="w-full h-auto mt-24 object-contain">
+            <img src="public/hero image/hero.jpg" alt="Professional Amazon Product Photography and Design Services by NJBL Design" class="w-full h-auto mt-24 object-contain">
         </div>
     </section>
 
@@ -531,10 +532,12 @@
     <section class="py-16 bg-primary">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-2xl md:text-4xl font-bold text-left mb-12 text-white">
-                    <span data-i18n="value.title1">Why Your Business Deserves a Strategic,</span><br>
-                    <span data-i18n="value.title2">Sales-Driven Design?</span>
-                </h2>
+                <header>
+                    <h2 class="text-2xl md:text-4xl font-bold text-left mb-12 text-white">
+                        <span data-i18n="value.title1">Why Your Business Deserves a Strategic,</span><br>
+                        <span data-i18n="value.title2">Sales-Driven Design?</span>
+                    </h2>
+                </header>
             </div>
             <div class="max-w-5xl mx-auto space-y-6 text-white">
                 <p class="text-left md:text-justify leading-relaxed text-xl" data-i18n="value.p1">
@@ -1682,6 +1685,7 @@
             }
         });
     </script>
+    </main>
 </body>
 
 </html>
