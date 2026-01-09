@@ -182,7 +182,8 @@
         }
 
         .dropdown-menu a {
-            display: block;
+            display: flex;
+            align-items: center;
             padding: 0.75rem 1.5rem;
             color: white;
             transition: all 0.2s;
@@ -207,10 +208,13 @@
         }
 
         .mobile-dropdown-menu a {
-            display: block;
+            display: flex;
+            align-items: center;
             padding: 0.5rem 0;
             font-size: 0.9rem;
             color: #9CA3AF;
+            white-space: nowrap;
+            flex-wrap: nowrap;
         }
 
         .mobile-dropdown-menu a:hover {
@@ -283,59 +287,11 @@
             }
         }
 
-
-/* customizable snowflake styling */
-.snowflake {
-  color: #fff;
-  font-size: 1em;
-  font-family: Arial, sans-serif;
-  text-shadow: 0 0 5px #000;
-}
- 
-.snowflake,.snowflake .inner{animation-iteration-count:infinite;animation-play-state:running}@keyframes snowflakes-fall{0%{transform:translateY(0)}100%{transform:translateY(110vh)}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;user-select:none;cursor:default;pointer-events:none;animation-name:snowflakes-shake;animation-duration:3s;animation-timing-function:ease-in-out}.snowflake .inner{animation-duration:10s;animation-name:snowflakes-fall;animation-timing-function:linear}.snowflake:nth-of-type(0){left:1%;animation-delay:0s}.snowflake:nth-of-type(0) .inner{animation-delay:0s}.snowflake:first-of-type{left:10%;animation-delay:1s}.snowflake:first-of-type .inner,.snowflake:nth-of-type(8) .inner{animation-delay:1s}.snowflake:nth-of-type(2){left:20%;animation-delay:.5s}.snowflake:nth-of-type(2) .inner,.snowflake:nth-of-type(6) .inner{animation-delay:6s}.snowflake:nth-of-type(3){left:30%;animation-delay:2s}.snowflake:nth-of-type(11) .inner,.snowflake:nth-of-type(3) .inner{animation-delay:4s}.snowflake:nth-of-type(4){left:40%;animation-delay:2s}.snowflake:nth-of-type(10) .inner,.snowflake:nth-of-type(4) .inner{animation-delay:2s}.snowflake:nth-of-type(5){left:50%;animation-delay:3s}.snowflake:nth-of-type(5) .inner{animation-delay:8s}.snowflake:nth-of-type(6){left:60%;animation-delay:2s}.snowflake:nth-of-type(7){left:70%;animation-delay:1s}.snowflake:nth-of-type(7) .inner{animation-delay:2.5s}.snowflake:nth-of-type(8){left:80%;animation-delay:0s}.snowflake:nth-of-type(9){left:90%;animation-delay:1.5s}.snowflake:nth-of-type(9) .inner{animation-delay:3s}.snowflake:nth-of-type(10){left:25%;animation-delay:0s}.snowflake:nth-of-type(11){left:65%;animation-delay:2.5s}
-
     </style>
 </head>
 
 <body class="text-white font-sans">
-    <div class="snowflakes" aria-hidden="true">
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-  <div class="snowflake">
-    <div class="inner">❅</div>
-  </div>
-</div>
+    
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 bg-primary border-b border-gray-700 z-50">
         <div class="container mx-auto px-6 py-7">
@@ -373,7 +329,24 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
-                    <a href="#portfolio" class="text-2xl bg-white text-primary px-6 py-2 rounded-lg hover:bg-accent transition inline-block">Portfolio</a>
+                    <div class="dropdown">
+                        <a href="#portfolio" class="text-2xl bg-white text-primary px-6 py-2 rounded-lg hover:bg-accent transition inline-block flex items-center space-x-2">
+                            <span>Portfolio</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="https://www.behance.net/njbldesign" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3">
+                                <img src="public/logo/logo1-01.png" alt="Behance" class="w-6 h-6 object-contain rounded-full">
+                                <span>Behance</span>
+                            </a>
+                            <a href="https://www.instagram.com/njbl.design" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3">
+                                <img src="public/logo/logo2-01-01.png" alt="Instagram" class="w-6 h-6 object-contain rounded-full">
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -408,7 +381,25 @@
                         </div>
                     </div>
                     <a href="https://wa.me/00905056779458" target="_blank" class="nav-link hover:text-accent transition">let's talk</a>
-                    <a href="#portfolio" class="bg-white text-primary px-6 py-2 rounded-lg hover:bg-accent transition inline-block">Portfolio</a>
+                    <div>
+                        <button id="mobilePortfolioBtn" class="nav-link hover:text-accent transition flex items-center justify-between w-full">
+                            <span>Portfolio</span>
+                            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div id="mobilePortfolioMenu" class="mobile-dropdown-menu">
+                            <a href="#portfolio">View Portfolio</a>
+                            <a href="https://www.behance.net/njbldesign" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
+                                <img src="public/logo/logo1-01.png" alt="Behance" class="w-5 h-5 object-contain rounded-full flex-shrink-0">
+                                <span>Behance</span>
+                            </a>
+                            <a href="https://www.instagram.com/njbl.design" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
+                                <img src="public/logo/logo2-01-01.png" alt="Instagram" class="w-5 h-5 object-contain rounded-full flex-shrink-0">
+                                <span>Instagram</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -421,23 +412,6 @@
         <div class="relative w-full mt-24">
             <img src="public/hero image/hero.jpg" alt="Design illustration"
                 class="w-full h-auto object-contain">
-            
-            <!-- Social Media Icons -->
-            <div class="absolute bottom-4 left-4 z-10 flex gap-4">
-                <!-- Behance Icon -->
-                <a href="https://www.behance.net/njbldesign" target="_blank" rel="noopener noreferrer" 
-                   class="flex items-center justify-center transition-all duration-300 hover:scale-110 relative group">
-                    <img src="public/logo/logo1-01.png" alt="Behance" class="w-8 h-8 object-contain rounded-full">
-                    <span class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">Behance</span>
-                </a>
-                
-                <!-- Instagram Icon -->
-                <a href="https://www.instagram.com/njbl.design" target="_blank" rel="noopener noreferrer" 
-                   class="flex items-center justify-center transition-all duration-300 hover:scale-110 relative group">
-                    <img src="public/logo/logo2-01-01.png" alt="Instagram" class="w-8 h-8 object-contain rounded-full">
-                    <span class="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">Instagram</span>
-                </a>
-            </div>
         </div>
     </section>
 
@@ -447,29 +421,6 @@
         <div class="absolute inset-0 w-full h-full">
             <img src="public/hero image/hero.jpg" alt="Design illustration"
                 class="w-full h-auto mt-24 object-contain">
-        </div>
-
-        <!-- Social Media Icons -->
-        <div class="relative z-10 flex items-end justify-start h-full pb-32 pl-24">
-            <div class="flex gap-6">
-                <!-- Behance Icon -->
-                <a href="https://www.behance.net/njbldesign" target="_blank" rel="noopener noreferrer" 
-                   class="flex items-center justify-center transition-all duration-300 hover:scale-110 relative group">
-                    <img src="public/logo/logo1-01.png" alt="Behance" class="w-20 h-20 object-contain rounded-full">
-                    <span class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">Behance</span>
-                </a>
-                
-                <!-- Instagram Icon -->
-                <a href="https://www.instagram.com/njbl.design" target="_blank" rel="noopener noreferrer" 
-                   class="flex items-center justify-center transition-all duration-300 hover:scale-110 relative group">
-                    <img src="public/logo/logo2-01-01.png" alt="Instagram" class="w-20 h-20 object-contain rounded-full">
-                    <span class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap z-50">Instagram</span>
-                </a>
-            </div>
-        </div>
-                    <span class="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-sm px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">Instagram</span>
-                </a>
-            </div>
         </div>
     </section>
 
@@ -1326,6 +1277,8 @@ and final adjustments are made before approval.
         const mobileMenu = document.getElementById('mobileMenu');
         const mobileServicesBtn = document.getElementById('mobileServicesBtn');
         const mobileServicesMenu = document.getElementById('mobileServicesMenu');
+        const mobilePortfolioBtn = document.getElementById('mobilePortfolioBtn');
+        const mobilePortfolioMenu = document.getElementById('mobilePortfolioMenu');
 
         mobileMenuBtn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -1338,6 +1291,13 @@ and final adjustments are made before approval.
             e.stopPropagation();
             mobileServicesMenu.classList.toggle('active');
             mobileServicesBtn.querySelector('svg').classList.toggle('rotate-180');
+        });
+
+        // Mobile portfolio dropdown toggle
+        mobilePortfolioBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobilePortfolioMenu.classList.toggle('active');
+            mobilePortfolioBtn.querySelector('svg').classList.toggle('rotate-180');
         });
 
         // Close mobile menu when clicking outside
