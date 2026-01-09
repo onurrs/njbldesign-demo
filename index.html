@@ -91,7 +91,7 @@
         }
 
         #mobileMenu.active {
-            max-height: 300px;
+            max-height: 1000px;
         }
 
         #mobileMenuBtn svg {
@@ -124,22 +124,28 @@
         }
 
         .label-design-container {
-            padding-bottom: 60%; /* Mobile: 5:3 ratio like portfolio */
+            padding-bottom: 60%;
+            /* Mobile: 5:3 ratio like portfolio */
         }
 
         @media (min-width: 768px) {
             .label-design-container {
-                padding-bottom: 38.4%; /* Desktop: original ratio */
+                padding-bottom: 38.4%;
+                /* Desktop: original ratio */
             }
         }
 
         @keyframes wiggle {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: rotate(0deg);
             }
+
             25% {
                 transform: rotate(10deg);
             }
+
             75% {
                 transform: rotate(-10deg);
             }
@@ -151,7 +157,7 @@
         }
 
         .nav-link:hover {
-            animation: wiggle 0.5s ease-in-out infinite;
+            /* animation: wiggle 0.5s ease-in-out infinite; */
         }
 
         .dropdown {
@@ -167,7 +173,7 @@
             border: 1px solid #374151;
             border-radius: 0.5rem;
             padding: 0.5rem 0;
-            min-width: 280px;
+            min-width: 350px;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -204,7 +210,7 @@
         }
 
         .mobile-dropdown-menu.active {
-            max-height: 500px;
+            max-height: 1500px;
         }
 
         .mobile-dropdown-menu a {
@@ -275,23 +281,22 @@
                 min-height: 100vh;
                 min-height: -webkit-fill-available;
             }
-            
+
             #home .container {
                 padding-top: 5rem;
             }
         }
-        
+
         @media (min-width: 641px) and (max-width: 1079px) {
             #home .container {
                 padding-top: 6rem;
             }
         }
-
     </style>
 </head>
 
 <body class="text-white font-sans">
-    
+
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 bg-primary border-b border-gray-700 z-50">
         <div class="container mx-auto px-6 py-7">
@@ -303,46 +308,63 @@
 
                 <!-- Desktop Navigation - Right Aligned -->
                 <div class="hidden md:flex space-x-6 items-center text-lg">
-                    <a href="#" class="nav-link text-2xl hover:text-accent transition" onclick="scrollToTop(event)">home</a>
-                    <a href="#about" class="nav-link text-2xl hover:text-accent transition" >about me</a>
-                    <a href="#projectworkflow" class="nav-link text-2xl hover:text-accent transition">project workflow</a>
+                    <a href="#" class="nav-link text-2xl hover:text-accent transition"
+                        onclick="scrollToTop(event)">home</a>
+                    <a href="#about" class="nav-link text-2xl hover:text-accent transition">about me</a>
+                    <a href="#projectworkflow" class="nav-link text-2xl hover:text-accent transition">project
+                        workflow</a>
                     <div class="dropdown">
                         <button class="nav-link text-2xl hover:text-accent transition flex items-center space-x-1">
                             <span data-i18n="nav.services">services</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
                         <div class="dropdown-menu">
                             <a data-i18n="services.label" onclick="openOrderModal(event)">Package Label Design</a>
                             <a data-i18n="services.listing" onclick="openOrderModal(event)">Amazon Listing Design</a>
-                            <a data-i18n="services.ebc" onclick="openOrderModal(event)">Amazon EBC and A+ Premium Listing</a>
-                            <a data-i18n="services.ppc" onclick="openOrderModal(event)">Amazon PPC Management Optimization</a>
+                            <a data-i18n="services.ebc" onclick="openOrderModal(event)">Amazon EBC and A+ Premium
+                                Listing</a>
+                            <a data-i18n="services.ppc" onclick="openOrderModal(event)">Amazon PPC Management
+                                Optimization</a>
                             <a data-i18n="services.setup" onclick="openOrderModal(event)">Product Setup</a>
-                            <a data-i18n="services.optimization" onclick="openOrderModal(event)">Listing Optimization</a>
-                            <a data-i18n="services.storefront" onclick="openOrderModal(event)">Storefront Maintenance</a>
+                            <a data-i18n="services.optimization" onclick="openOrderModal(event)">Listing
+                                Optimization</a>
+                            <a data-i18n="services.storefront" onclick="openOrderModal(event)">Storefront
+                                Maintenance</a>
                         </div>
                     </div>
-                    <a href="https://wa.me/00905056779458" target="_blank" class="nav-link text-2xl hover:text-accent transition">let's talk</a>
-                    <button id="sidePanelBtn" class="w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 group">
-                        <svg class="w-6 h-6 text-gray-800 group-hover:text-white transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <a href="https://wa.me/00905056779458" target="_blank"
+                        class="nav-link text-2xl hover:text-accent transition">let's talk</a>
+                    <button id="sidePanelBtn"
+                        class="w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-orange-500 transition-all duration-300 group">
+                        <svg class="w-6 h-6 text-gray-800 group-hover:text-white transition" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                     <div class="dropdown">
-                        <a class="text-2xl bg-white text-primary px-6 py-2 rounded-lg hover:bg-accent transition inline-block flex items-center space-x-2 cursor-pointer">
+                        <a
+                            class="text-2xl bg-white text-primary px-6 py-2 rounded-lg hover:bg-accent transition inline-block flex items-center space-x-2 cursor-pointer">
                             <span>Portfolio</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
                         <div class="dropdown-menu">
-                            <a href="https://www.behance.net/njbldesign" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3">
-                                <img src="public/logo/logo1-01.png" alt="Behance" class="w-6 h-6 object-contain rounded-full">
+                            <a href="https://www.behance.net/njbldesign" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center space-x-3">
+                                <img src="public/logo/logo1-01.png" alt="Behance"
+                                    class="w-6 h-6 object-contain rounded-full">
                                 <span>Behance</span>
                             </a>
-                            <a href="https://www.instagram.com/njbl.design" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3">
-                                <img src="public/logo/logo2-01-01.png" alt="Instagram" class="w-6 h-6 object-contain rounded-full">
+                            <a href="https://www.instagram.com/njbl.design" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center space-x-3">
+                                <img src="public/logo/logo2-01-01.png" alt="Instagram"
+                                    class="w-6 h-6 object-contain rounded-full">
                                 <span>Instagram</span>
                             </a>
                         </div>
@@ -364,38 +386,51 @@
                     <a href="#about" class="nav-link hover:text-accent transition">about me</a>
                     <a href="#projectworkflow" class="nav-link hover:text-accent transition">project workflow</a>
                     <div>
-                        <button id="mobileServicesBtn" class="nav-link hover:text-accent transition flex items-center justify-between w-full">
+                        <button id="mobileServicesBtn"
+                            class="nav-link hover:text-accent transition flex items-center justify-between w-full">
                             <span data-i18n="nav.services">services</span>
-                            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
                         <div id="mobileServicesMenu" class="mobile-dropdown-menu">
                             <a onclick="openOrderModal(event)" data-i18n="services.label">Package Label Design</a>
                             <a onclick="openOrderModal(event)" data-i18n="services.listing">Amazon Listing Design</a>
-                            <a onclick="openOrderModal(event)" data-i18n="services.ebc">Amazon EBC and A+ Premium Listing</a>
-                            <a onclick="openOrderModal(event)" data-i18n="services.ppc">Amazon PPC Management Optimization</a>
+                            <a onclick="openOrderModal(event)" data-i18n="services.ebc">Amazon EBC and A+ Premium
+                                Listing</a>
+                            <a onclick="openOrderModal(event)" data-i18n="services.ppc">Amazon PPC Management
+                                Optimization</a>
                             <a onclick="openOrderModal(event)" data-i18n="services.setup">Product Setup</a>
-                            <a onclick="openOrderModal(event)" data-i18n="services.optimization">Listing Optimization</a>
+                            <a onclick="openOrderModal(event)" data-i18n="services.optimization">Listing
+                                Optimization</a>
                             <a href="#portfolio" data-i18n="services.storefront">Storefront Maintenance</a>
                         </div>
                     </div>
-                    <a href="https://wa.me/00905056779458" target="_blank" class="nav-link hover:text-accent transition">let's talk</a>
+                    <a href="https://wa.me/00905056779458" target="_blank"
+                        class="nav-link hover:text-accent transition">let's talk</a>
                     <div>
-                        <button id="mobilePortfolioBtn" class="nav-link hover:text-accent transition flex items-center justify-between w-full">
+                        <button id="mobilePortfolioBtn"
+                            class="nav-link hover:text-accent transition flex items-center justify-between w-full">
                             <span>Portfolio</span>
-                            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
                         <div id="mobilePortfolioMenu" class="mobile-dropdown-menu">
-                            <a>View Portfolio</a>
-                            <a href="https://www.behance.net/njbldesign" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
-                                <img src="public/logo/logo1-01.png" alt="Behance" class="w-5 h-5 object-contain rounded-full flex-shrink-0">
+                            <a href="https://www.behance.net/njbldesign" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2">
+                                <img src="public/logo/logo1-01.png" alt="Behance"
+                                    class="w-5 h-5 object-contain rounded-full flex-shrink-0">
                                 <span>Behance</span>
                             </a>
-                            <a href="https://www.instagram.com/njbl.design" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2">
-                                <img src="public/logo/logo2-01-01.png" alt="Instagram" class="w-5 h-5 object-contain rounded-full flex-shrink-0">
+                            <a href="https://www.instagram.com/njbl.design" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2">
+                                <img src="public/logo/logo2-01-01.png" alt="Instagram"
+                                    class="w-5 h-5 object-contain rounded-full flex-shrink-0">
                                 <span>Instagram</span>
                             </a>
                         </div>
@@ -410,8 +445,7 @@
     <section id="home" class="md:hidden relative w-full overflow-hidden">
         <!-- Background Images -->
         <div class="relative w-full mt-24">
-            <img src="public/hero image/hero.jpg" alt="Design illustration"
-                class="w-full h-auto object-contain">
+            <img src="public/hero image/hero.jpg" alt="Design illustration" class="w-full h-auto object-contain">
         </div>
     </section>
 
@@ -419,8 +453,7 @@
     <section id="home" class="hidden md:block relative w-full h-screen overflow-hidden">
         <!-- Background Images -->
         <div class="absolute inset-0 w-full h-full">
-            <img src="public/hero image/hero.jpg" alt="Design illustration"
-                class="w-full h-auto mt-24 object-contain">
+            <img src="public/hero image/hero.jpg" alt="Design illustration" class="w-full h-auto mt-24 object-contain">
         </div>
     </section>
 
@@ -428,7 +461,7 @@
     <section class="py-16 bg-primary">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-left mb-12 text-white">
+                <h2 class="text-2xl md:text-4xl font-bold text-left mb-12 text-white">
                     <span data-i18n="value.title1">Why Your Business Deserves a Strategic,</span><br>
                     <span data-i18n="value.title2">Sales-Driven Design?</span>
                 </h2>
@@ -445,7 +478,8 @@
                     marketplaces — often leading to conversion rate increases of 70%-80% when the design is fully
                     optimized.
                 </p>
-                <p class="text-left md:text-justify leading-relaxed font-semibold text-white text-xl" data-i18n="value.p3">
+                <p class="text-left md:text-justify leading-relaxed font-semibold text-white text-xl"
+                    data-i18n="value.p3">
                     If you're ready to increase conversions and position your brand as the clear choice, now is the time
                     to upgrade your visuals and take the lead.
                 </p>
@@ -524,7 +558,8 @@
     <section id="services" class="py-16 bg-gray-900">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-left mb-12 text-accent leading-tight text-center" data-i18n="services.label.title">
+                <h2 class="text-2xl md:text-5xl font-bold text-left mb-12 text-accent leading-tight text-center"
+                    data-i18n="services.label.title">
                     Upgrade your product's look with label designs that grab attention, build trust, and drive higher
                     conversions
                 </h2>
@@ -540,7 +575,7 @@
                         class="absolute inset-0 w-full h-full object-contain label-crossfade" style="z-index: 1;">
                 </div>
             </div>
-            
+
             <!-- Desktop Images -->
             <div class="relative w-full mx-auto mb-12 px-4 hidden md:block">
                 <div class="relative w-full label-design-container">
@@ -553,7 +588,8 @@
 
             <!-- Description Text -->
             <div class="w-full mx-auto mt-12 bg-accent rounded-lg p-8">
-                <p class="text-white text-2xl leading-relaxed text-left md:text-center" data-i18n="services.label.description">
+                <p class="text-xl text-white md:text-2xl leading-relaxed text-left md:text-center"
+                    data-i18n="services.label.description">
                     Boost your Amazon sales with a high-quality product label. I create premium, conversion-focused
                     designs backed by 6+ years of experience with Amazon sellers. A professional label instantly builds
                     trust, makes your product stand out, and turns more shoppers into buyers. If you want a label that
@@ -567,19 +603,23 @@
     <section class="py-16 bg-primary">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto">
-                <h2 class="text-2xl md:text-5xl font-bold text-left mb-8 text-white" data-i18n="services.amazon.title">Conversion-Focused Amazon Visuals
+                <h2 class="text-2xl md:text-5xl font-bold text-left mb-8 text-white" data-i18n="services.amazon.title">
+                    Conversion-Focused Amazon Visuals
                 </h2>
             </div>
             <div class="max-w-5xl mx-auto mb-12">
-                <p class="text-white text-base md:text-xl leading-relaxed mb-6 text-left md:text-justify" data-i18n="services.amazon.p1">
+                <p class="text-white text-base md:text-xl leading-relaxed mb-6 text-left md:text-justify"
+                    data-i18n="services.amazon.p1">
                     I create high-converting Amazon listing images designed to boost visibility, trust, and sales.
                 </p>
-                <p class="text-white text-base md:text-xl leading-relaxed mb-6 text-left md:text-justify" data-i18n="services.amazon.p2">
+                <p class="text-white text-base md:text-xl leading-relaxed mb-6 text-left md:text-justify"
+                    data-i18n="services.amazon.p2">
                     With a strategic approach to Amazon's competitive marketplace, I deliver a complete set of optimized
                     visuals—including Product Main Image, Product Kit/Included Items Image, Features Highlight Image,
                     Comparison Image, Infographic Image, Usage/Benefits Image, Lifestyle Image, and Instruction Image.
                 </p>
-                <p class="text-white text-base md:text-xl leading-relaxed text-left md:text-justify" data-i18n="services.amazon.p3">
+                <p class="text-white text-base md:text-xl leading-relaxed text-left md:text-justify"
+                    data-i18n="services.amazon.p3">
                     Every image is crafted to communicate value instantly, answer customer questions, and influence
                     purchase decisions.
                 </p>
@@ -596,16 +636,19 @@
                     <div class="bg-accent flex items-stretch rounded-b-lg w-full">
                         <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
                         <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
-                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.kit.title">KIT
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase"
+                                data-i18n="services.kit.title">KIT
                                 INCLUDE<br>IMAGE</h3>
                         </div>
                     </div>
                     <!-- Hover Overlay -->
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
-                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.kit.title">KIT
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase"
+                            data-i18n="services.kit.title">KIT
                             INCLUDES<br>IMAGE</h3>
-                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.kit.description">
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify"
+                            data-i18n="services.kit.description">
                             A Kit Include image shows exactly what customers get, building trust and eliminating
                             confusion. It increases perceived value, reduces returns, and boosts conversions by giving
                             buyers clear, confident expectations.
@@ -621,15 +664,18 @@
                     <div class="bg-accent flex items-stretch rounded-b-lg w-full">
                         <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
                         <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
-                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.features.title">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase"
+                                data-i18n="services.features.title">
                                 FEATURES<br>IMAGE</h3>
                         </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
-                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.features.title">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase"
+                            data-i18n="services.features.title">
                             FEATURES<br>IMAGE</h3>
-                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.features.description">
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify"
+                            data-i18n="services.features.description">
                             A Kit Features Image highlights your product's key benefits instantly, builds confidence,
                             and boosts conversions by making its value easy to understand.</p>
                     </div>
@@ -643,15 +689,18 @@
                     <div class="bg-accent flex items-stretch rounded-b-lg w-full">
                         <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
                         <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
-                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.comparison.title">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase"
+                                data-i18n="services.comparison.title">
                                 COMPARISON<br>IMAGE</h3>
                         </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
-                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.comparison.title">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase"
+                            data-i18n="services.comparison.title">
                             COMPARISON<br>IMAGE</h3>
-                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.comparison.description">
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify"
+                            data-i18n="services.comparison.description">
                             A Comparison Image quickly shows why your product is better, highlighting advantages
                             clearly. It builds trust, reduces doubt, and boosts conversions by making the choice easy
                             for customers.</p>
@@ -666,15 +715,18 @@
                     <div class="bg-accent flex items-stretch rounded-b-lg w-full">
                         <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
                         <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
-                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.infographic.title">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase"
+                                data-i18n="services.infographic.title">
                                 INFOGRAPHIC<br>IMAGE</h3>
                         </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
-                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.infographic.title">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase"
+                            data-i18n="services.infographic.title">
                             INFOGRAPHIC<br>IMAGE</h3>
-                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.infographic.description">
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify"
+                            data-i18n="services.infographic.description">
                             An Infographic image explains your product's key points in a quick, visual way, making
                             information easy to understand and boosting customer confidence and conversions.</p>
                     </div>
@@ -688,15 +740,18 @@
                     <div class="bg-accent flex items-stretch rounded-b-lg w-full">
                         <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
                         <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
-                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.uses.title">PRODUCT
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase"
+                                data-i18n="services.uses.title">PRODUCT
                                 USES<br>IMAGE</h3>
                         </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
-                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.uses.title">PRODUCT
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase"
+                            data-i18n="services.uses.title">PRODUCT
                             USES<br>IMAGE</h3>
-                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.uses.description">
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify"
+                            data-i18n="services.uses.description">
                             A Uses image shows how the product works in real situations, helping customers understand
                             its purpose, visualize the benefits, and feel more confident to buy.</p>
                     </div>
@@ -710,15 +765,18 @@
                     <div class="bg-accent flex items-stretch rounded-b-lg w-full">
                         <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
                         <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
-                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.lifestyle.title">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase"
+                                data-i18n="services.lifestyle.title">
                                 LIFESTYLE<br>IMAGE</h3>
                         </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
-                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.lifestyle.title">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase"
+                            data-i18n="services.lifestyle.title">
                             LIFESTYLE<br>IMAGE</h3>
-                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.lifestyle.description">
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify"
+                            data-i18n="services.lifestyle.description">
                             A Lifestyle image shows the product in everyday use, helping customers imagine it in their
                             own life, building trust, and increasing the likelihood of purchase.</p>
                     </div>
@@ -732,15 +790,20 @@
                     <div class="bg-accent flex items-stretch rounded-b-lg w-full">
                         <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
                         <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
-                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.instruction1.title">INSTRUCTION
-                                <br>IMAGE</h3>
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase"
+                                data-i18n="services.instruction1.title">INSTRUCTION
+                                <br>IMAGE
+                            </h3>
                         </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
-                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.instruction.title">INSTRUCTION
-                            <br>IMAGE</h3>
-                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.instruction.description">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase"
+                            data-i18n="services.instruction.title">INSTRUCTION
+                            <br>IMAGE
+                        </h3>
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify"
+                            data-i18n="services.instruction.description">
                             An Instruction image clearly shows how to use the product, reducing confusion, preventing
                             errors, and increasing customer confidence and satisfaction.</p>
                     </div>
@@ -754,15 +817,18 @@
                     <div class="bg-accent flex items-stretch rounded-b-lg w-full">
                         <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
                         <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
-                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.instruction2.title">
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase"
+                                data-i18n="services.instruction2.title">
                                 INSTRUCTIONS<br>IMAGE</h3>
                         </div>
                     </div>
                     <div
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
-                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase" data-i18n="services.instruction.title">
+                        <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase"
+                            data-i18n="services.instruction.title">
                             INSTRUCTIONS<br>IMAGE</h3>
-                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.instruction.description">
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify"
+                            data-i18n="services.instruction.description">
                             An Instruction image clearly shows how to use the product, reducing confusion, preventing
                             errors, and increasing customer confidence and satisfaction.</p>
                     </div>
@@ -776,7 +842,8 @@
                     <div class="bg-accent flex items-stretch rounded-b-lg w-full">
                         <div class="w-5 md:w-6 bg-gray-300 self-stretch"></div>
                         <div class="py-2 px-2 md:py-4 md:px-6 flex items-center">
-                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase" data-i18n="services.main.title">PRODUCT
+                            <h3 class="text-white font-bold text-[0.75rem] md:text-xl leading-tight uppercase"
+                                data-i18n="services.main.title">PRODUCT
                                 MAIN<br>IMAGE</h3>
                         </div>
                     </div>
@@ -784,7 +851,8 @@
                         class="absolute inset-0 w-full h-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-start items-start p-2 pt-3 md:p-8 md:pt-12 rounded-lg">
                         <h3 class="text-white font-bold text-[0.5rem] md:text-xl mb-1 md:mb-4 uppercase">
                             PRODUCT MAIN IMAGE</h3>
-                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify" data-i18n="services.main.description">
+                        <p class="text-white text-[0.45rem] md:text-base leading-tight md:leading-relaxed text-justify"
+                            data-i18n="services.main.description">
                             A professional Main Image grabs attention instantly, showcases your product clearly, boosts
                             click-through rates, and sets the foundation for higher sales and trust on Amazon.</p>
                     </div>
@@ -793,7 +861,7 @@
 
             <!-- Bottom Info Box -->
             <div class="max-w-7xl mx-auto mt-12 bg-accent rounded-lg p-8">
-                <p class="text-white text-2xl leading-relaxed text-center" data-i18n="services.info.text">
+                <p class="text-xl text-white md:text-2xl leading-relaxed text-center" data-i18n="services.info.text">
                     Each image type serves a specific purpose in the customer journey—from grabbing attention to
                     answering questions and building trust. Together, they create a complete visual story that drives
                     conversions.
@@ -807,7 +875,7 @@
         <div class="container mx-auto px-6">
             <!-- Section Header -->
             <div class="max-w-4xl mx-auto mb-16 text-center">
-                <h2 class="md:text-4xl font-bold mb-6 text-white leading-tight data-i18n="workflow.title">
+                <h2 class="text-2xl md:text-4xl font-bold mb-6 text-white leading-tight data-i18n=" workflow.title">
                     A Detailed Breakdown of the Project Workﬂow
                 </h2>
             </div>
@@ -816,54 +884,66 @@
             <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-16">
                 <!-- Workflow Item 1 -->
                 <div class="flex flex-col">
-                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300" style="aspect-ratio: 2000/1890;">
+                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                        style="aspect-ratio: 2000/1890;">
                         <img src="public/workflow/1 Client Meeting.jpg" alt="Meeting with client"
                             class="w-full h-full object-cover">
                     </div>
-                    <p class="text-accent text-2xl font-bold text-center mt-6 leading-relaxed" >Meeting with </br>client</p>
-                    <p class="text-white text-xl text-center mt-6 leading-relaxed">We discuss the client’s goals, expectations, timeline, and requirements 
-to clearly understand the project scope and direction.
-</p>
+                    <p class="text-xl text-accent md:text-2xl font-bold text-center mt-6 leading-tight">Meeting with </br>client
+                    </p>
+                    <p class="text-lg text-white md:text-xl text-center mt-6 leading-relaxed">We discuss the client’s goals,
+                        expectations, timeline, and requirements
+                        to clearly understand the project scope and direction.
+                    </p>
                 </div>
 
                 <!-- Workflow Item 2 -->
                 <div class="flex flex-col">
-                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300" style="aspect-ratio: 2000/1890;">
+                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                        style="aspect-ratio: 2000/1890;">
                         <img src="public/workflow/2 Reserch phase.jpg" alt="Research & Concept Development Phase"
                             class="w-full h-full object-cover">
                     </div>
-                    <p class="text-accent text-2xl font-bold text-center mt-6 leading-relaxed" data-i18n="workflow.step2">Research & Concept Development Phase
+                    <p class="text-xl text-accent md:text-2xl font-bold text-center mt-6 leading-tight"
+                        data-i18n="workflow.step2">Research & Concept Development Phase
                     </p>
-                    <p class="text-white text-xl text-center mt-6 leading-relaxed">We analyze the market, audience, and competitors, then develop creative 
-concepts and strategies that align with the project goals.
+                    <p class="text-lg text-white md:text-xl text-center mt-6 leading-relaxed">We analyze the market, audience, and
+                        competitors, then develop creative
+                        concepts and strategies that align with the project goals.
 
                     </p>
-                    
+
                 </div>
 
                 <!-- Workflow Item 3 -->
                 <div class="flex flex-col">
-                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300" style="aspect-ratio: 2000/1890;">
+                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                        style="aspect-ratio: 2000/1890;">
                         <img src="public/workflow/3 Execution.jpg" alt="Design Execution Phase"
                             class="w-full h-full object-cover">
                     </div>
-                    <p class="text-accent text-2xl font-bold text-center mt-6 leading-relaxed">Design Execution </br> Phase</p>
-                    <p class="text-white text-xl text-center mt-6 leading-relaxed">The approved concept is transformed into final designs through careful layout, 
-visuals, and refinement, ensuring quality and consistency.
-</p>
+                    <p class="text-xl text-accent md:text-2xl font-bold text-center mt-6 leading-tight">Design Execution </br>
+                        Phase</p>
+                    <p class="text-lg text-white md:text-xl text-center mt-6 leading-relaxed">The approved concept is transformed
+                        into final designs through careful layout,
+                        visuals, and refinement, ensuring quality and consistency.
+                    </p>
                 </div>
 
                 <!-- Workflow Item 4 -->
                 <div class="flex flex-col">
-                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300" style="aspect-ratio: 2000/1890;">
+                    <div class="relative overflow-hidden rounded-[6rem] w-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                        style="aspect-ratio: 2000/1890;">
                         <img src="public/workflow/4 Review and Feedback.jpg"
                             alt="Project Delivery & Client Review Phase" class="w-full h-full object-cover">
                     </div>
-                    <p class="text-accent text-2xl font-bold text-center mt-6 leading-relaxed" data-i18n="workflow.step4">Project Delivery & Client Review
+                    <p class="text-xl text-accent md:text-2xl font-bold text-center mt-6 leading-tight"
+                        data-i18n="workflow.step4">Project Delivery & Client Review
                         Phase</p>
-                        <p class="text-white text-xl text-center mt-6 leading-relaxed">The completed project is delivered for client review, feedback is collected, 
-and final adjustments are made before approval.
-</p>
+                    <p class="text-lg text-white md:text-xl text-center mt-6 leading-relaxed">The completed project is delivered
+                        for client review, feedback is collected,
+                        and final adjustments are made before approval.
+                    </p>
                 </div>
             </div>
         </div>
@@ -888,7 +968,7 @@ and final adjustments are made before approval.
                     <div class="swiper-wrapper pb-12">
                         <!-- Testimonials will be dynamically loaded from testimonials.js -->
                     </div>
-                    
+
                     <!-- Pagination -->
                     <div class="swiper-pagination"></div>
                 </div>
@@ -900,7 +980,8 @@ and final adjustments are made before approval.
     <section id="about" class="py-16 bg-primary">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto text-left md:text-justify">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white text-left" data-i18n="about.title">About me</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white text-left" data-i18n="about.title">About me
+                </h2>
                 <p class="text-white text-xl leading-relaxed mb-4" data-i18n="about.p1">
                     Hi, I'm NaJi, your Amazon design expert with 6+ years of professional experience in design. Over the
                     years, I've helped 100+ Amazon sellers create high-converting product label designs, listings, and
@@ -923,15 +1004,18 @@ and final adjustments are made before approval.
                 <div class="md:col-span-2">
                     <!-- What I Can Do for You -->
                     <div>
-                        <h3 class="text-2xl font-bold text-white mb-6" data-i18n="about.services.title">What I Can Do for You:</h3>
+                        <h3 class="text-2xl font-bold text-white mb-6" data-i18n="about.services.title">What I Can Do
+                            for You:</h3>
                         <ul class="space-y-3 text-white text-lg">
                             <li class="flex items-start">
                                 <span class="text-accent mr-3">→</span>
-                                <span data-i18n="about.services.1">Product Label & Packaging Design (Concept → Final Production)</span>
+                                <span data-i18n="about.services.1">Product Label & Packaging Design (Concept → Final
+                                    Production)</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-accent mr-3">→</span>
-                                <span data-i18n="about.services.2">Amazon Listing Images (Main Image, Infographics, Lifestyle etc)</span>
+                                <span data-i18n="about.services.2">Amazon Listing Images (Main Image, Infographics,
+                                    Lifestyle etc)</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-accent mr-3">→</span>
@@ -966,7 +1050,8 @@ and final adjustments are made before approval.
                             </li>
                             <li class="flex items-start">
                                 <span class="text-accent mr-3">→</span>
-                                <span data-i18n="about.why.3">Clean, professional visuals aligned with Amazon guidelines</span>
+                                <span data-i18n="about.why.3">Clean, professional visuals aligned with Amazon
+                                    guidelines</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-accent mr-3">→</span>
@@ -1002,8 +1087,7 @@ and final adjustments are made before approval.
             <div class="text-center">
                 <button id="orderNowBtn"
                     class="bg-accent text-primary font-bold px-8 py-2.5 rounded-lg hover:shadow-[0_0_30px_rgba(253,147,20,0.8)] hover:scale-105 transition-all duration-300"
-                    style="font-size: 2rem;"
-                    data-i18n="order.button">
+                    style="font-size: 2rem;" data-i18n="order.button">
                     Order Now!!
                 </button>
             </div>
@@ -1019,7 +1103,8 @@ and final adjustments are made before approval.
             </button>
 
             <div class="p-8">
-                <h2 class="text-3xl font-bold text-accent mb-8 text-center" data-i18n="order.modal.title">Get Started!</h2>
+                <h2 class="text-3xl font-bold text-accent mb-8 text-center" data-i18n="order.modal.title">Get Started!
+                </h2>
 
                 <!-- Two Column Layout -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -1064,36 +1149,47 @@ and final adjustments are made before approval.
                     <div>
                         <form id="orderForm" class="space-y-4">
                             <div>
-                                <label class="block text-white text-sm font-medium mb-2" data-i18n="order.form.name">Name *</label>
+                                <label class="block text-white text-sm font-medium mb-2"
+                                    data-i18n="order.form.name">Name *</label>
                                 <input type="text" name="from_name" required
                                     class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 focus:border-accent focus:outline-none text-white"
                                     data-i18n="order.form.name.placeholder" placeholder="Your name">
                             </div>
                             <div>
-                                <label class="block text-white text-sm font-medium mb-2" data-i18n="order.form.email">Email *</label>
+                                <label class="block text-white text-sm font-medium mb-2"
+                                    data-i18n="order.form.email">Email *</label>
                                 <input type="email" name="from_email" required
                                     class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 focus:border-accent focus:outline-none text-white"
                                     data-i18n="order.form.email.placeholder" placeholder="your@email.com">
                             </div>
                             <div>
-                                <label class="block text-white text-sm font-medium mb-2" data-i18n="order.form.service">Service Needed *</label>
+                                <label class="block text-white text-sm font-medium mb-2"
+                                    data-i18n="order.form.service">Service Needed *</label>
                                 <select name="service" required
                                     class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 focus:border-accent focus:outline-none text-white">
                                     <option value="" data-i18n="order.form.service.select">Select a service</option>
-                                    <option value="label-design" data-i18n="order.form.service.label">Package Label Design</option>
-                                    <option value="listing-design" data-i18n="order.form.service.listing">Amazon Listing Design</option>
-                                    <option value="a-plus-listing" data-i18n="order.form.service.aplus">Amazon EBC & A+ Premium Listing</option>
-                                    <option value="ppc" data-i18n="order.form.service.ppc">Amazon PPC Management Optimization</option>
-                                    <option value="listing-optimization" data-i18n="order.form.service.optimization">Listing Optimization</option>
-                                    <option value="storefront" data-i18n="order.form.service.storefront">Storefront Design</option>
+                                    <option value="label-design" data-i18n="order.form.service.label">Package Label
+                                        Design</option>
+                                    <option value="listing-design" data-i18n="order.form.service.listing">Amazon Listing
+                                        Design</option>
+                                    <option value="a-plus-listing" data-i18n="order.form.service.aplus">Amazon EBC & A+
+                                        Premium Listing</option>
+                                    <option value="ppc" data-i18n="order.form.service.ppc">Amazon PPC Management
+                                        Optimization</option>
+                                    <option value="listing-optimization" data-i18n="order.form.service.optimization">
+                                        Listing Optimization</option>
+                                    <option value="storefront" data-i18n="order.form.service.storefront">Storefront
+                                        Design</option>
                                     <option value="other" data-i18n="order.form.service.other">Other ...</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-white text-sm font-medium mb-2" data-i18n="order.form.details">Project Details *</label>
+                                <label class="block text-white text-sm font-medium mb-2"
+                                    data-i18n="order.form.details">Project Details *</label>
                                 <textarea name="message" rows="5" required
                                     class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 focus:border-accent focus:outline-none text-white"
-                                    data-i18n="order.form.details.placeholder" placeholder="Tell me about your project..."></textarea>
+                                    data-i18n="order.form.details.placeholder"
+                                    placeholder="Tell me about your project..."></textarea>
                             </div>
                             <button type="submit" id="submitBtn"
                                 class="w-full bg-accent text-primary font-semibold px-6 py-3 rounded hover:bg-opacity-90 transition"
@@ -1109,13 +1205,15 @@ and final adjustments are made before approval.
     </div>
 
     <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/00905056779458" target="_blank" 
-       class="fixed bottom-12 right-12 w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 z-50 group">
+    <a href="https://wa.me/00905056779458" target="_blank"
+        class="fixed bottom-12 right-12 w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-300 z-50 group">
         <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
         <!-- Tooltip Bubble -->
-        <div class="absolute right-20 top-1/2 -translate-y-1/2 bg-primary text-white px-4 py-2 rounded-lg whitespace-nowrap opacity-100 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-lg">
+        <div
+            class="absolute right-20 top-1/2 -translate-y-1/2 bg-primary text-white px-4 py-2 rounded-lg whitespace-nowrap opacity-100 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-lg">
             <span data-i18n="whatsapp.tooltip">Let's Talk</span>
             <!-- Arrow -->
             <div class="absolute left-full top-1/2 -translate-y-1/2 border-8 border-transparent border-l-primary"></div>
@@ -1123,13 +1221,17 @@ and final adjustments are made before approval.
     </a>
 
     <!-- Side Panel -->
-    <div id="sidePanelOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-[9998] hidden transition-opacity duration-300"></div>
-    <div id="sidePanel" class="fixed top-0 right-0 h-full w-96 bg-gray-900 shadow-2xl z-[9999] transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div id="sidePanelOverlay"
+        class="fixed inset-0 bg-black bg-opacity-50 z-[9998] hidden transition-opacity duration-300"></div>
+    <div id="sidePanel"
+        class="fixed top-0 right-0 h-full w-96 bg-gray-900 shadow-2xl z-[9999] transform translate-x-full transition-transform duration-300 ease-in-out">
         <div class="h-full flex flex-col p-8">
             <!-- Close Button -->
-            <button id="closeSidePanel" class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-orange-500 transition">
+            <button id="closeSidePanel"
+                class="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-orange-500 transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
                 </svg>
             </button>
 
@@ -1141,43 +1243,84 @@ and final adjustments are made before approval.
             <!-- Content -->
             <div class="flex-1 overflow-y-auto">
                 <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                    Hi, I'm NaJi, your Amazon design expert with 6+ years of professional experience in design. Over the years, I've helped 100+ Amazon sellers create high-converting product label designs, listings, and brand visuals that drive more clicks and turn views into sales.
+                    Hi, I'm NaJi, your Amazon design expert with 6+ years of professional experience in design. Over the
+                    years, I've helped 100+ Amazon sellers create high-converting product label designs, listings, and
+                    brand visuals that drive more clicks and turn views into sales.
                 </p>
                 <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                    I have a strong educational background in Graphic Design and Digital Marketing, which allows me to combine creativity with data-driven strategies. My work focuses not just on aesthetics, but on boosting conversions and brand trust on Amazon.
+                    I have a strong educational background in Graphic Design and Digital Marketing, which allows me to
+                    combine creativity with data-driven strategies. My work focuses not just on aesthetics, but on
+                    boosting conversions and brand trust on Amazon.
                 </p>
                 <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                    Whether you're launching your first product or scaling an existing Amazon brand, I support you from concept to full launch, transforming ideas into high-converting designs.
+                    Whether you're launching your first product or scaling an existing Amazon brand, I support you from
+                    concept to full launch, transforming ideas into high-converting designs.
                 </p>
 
                 <!-- Social Media Icons -->
                 <div class="flex flex-wrap gap-3">
-                    <a href="#" class="w-12 h-12 bg-green-500 hover:bg-green-600 rounded-lg flex items-center justify-center transition">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    <a href="#"
+                        class="w-12 h-12 bg-green-500 hover:bg-green-600 rounded-lg flex items-center justify-center transition">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                        </svg>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center transition">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <a href="#"
+                        class="w-12 h-12 bg-blue-600 hover:bg-blue-700 rounded-lg flex items-center justify-center transition">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-lg flex items-center justify-center transition">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <a href="#"
+                        class="w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-lg flex items-center justify-center transition">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-pink-600 hover:bg-pink-700 rounded-lg flex items-center justify-center transition">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                    <a href="#"
+                        class="w-12 h-12 bg-pink-600 hover:bg-pink-700 rounded-lg flex items-center justify-center transition">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+                        </svg>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-red-600 hover:bg-red-700 rounded-lg flex items-center justify-center transition">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    <a href="#"
+                        class="w-12 h-12 bg-red-600 hover:bg-red-700 rounded-lg flex items-center justify-center transition">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                        </svg>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-red-500 hover:bg-red-600 rounded-lg flex items-center justify-center transition">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                    <a href="#"
+                        class="w-12 h-12 bg-red-500 hover:bg-red-600 rounded-lg flex items-center justify-center transition">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z" />
+                        </svg>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-pink-500 hover:bg-pink-600 rounded-lg flex items-center justify-center transition">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+                    <a href="#"
+                        class="w-12 h-12 bg-pink-500 hover:bg-pink-600 rounded-lg flex items-center justify-center transition">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z" />
+                        </svg>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-blue-400 hover:bg-blue-500 rounded-lg flex items-center justify-center transition">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <a href="#"
+                        class="w-12 h-12 bg-blue-400 hover:bg-blue-500 rounded-lg flex items-center justify-center transition">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-lg flex items-center justify-center transition">
-                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+                    <a href="#"
+                        class="w-12 h-12 bg-blue-500 hover:bg-blue-600 rounded-lg flex items-center justify-center transition">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
+                        </svg>
                     </a>
                 </div>
             </div>
@@ -1353,12 +1496,12 @@ and final adjustments are made before approval.
                 if (target) {
                     const targetId = this.getAttribute('href').substring(1);
                     let offsetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-                    
+
                     // Add 5% viewport height offset for portfolio, about and projectworkflow sections
                     if (targetId === 'portfolio' || targetId === 'about' || targetId === 'projectworkflow') {
                         offsetPosition -= window.innerHeight * 0.05;
                     }
-                    
+
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: 'smooth'
@@ -1413,9 +1556,9 @@ and final adjustments are made before approval.
         const orderForm = document.getElementById('orderForm');
         const submitBtn = document.getElementById('submitBtn');
 
-        orderForm.addEventListener('submit', function(e) {
+        orderForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Disable submit button and show loading state
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
@@ -1423,29 +1566,29 @@ and final adjustments are made before approval.
 
             // Send email using EmailJS
             emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, this)
-                .then(function(response) {
+                .then(function (response) {
                     console.log('SUCCESS!', response.status, response.text);
-                    
+
                     // Show success message
                     alert('✅ Order request sent successfully! We will contact you soon.');
-                    
+
                     // Reset form
                     orderForm.reset();
-                    
+
                     // Close modal
                     orderModal.classList.add('hidden');
                     document.body.style.overflow = 'auto';
-                    
+
                     // Re-enable submit button
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Submit Order Request';
                     submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                }, function(error) {
+                }, function (error) {
                     console.error('FAILED...', error);
-                    
+
                     // Show error message
                     alert('❌ Failed to send order request. Please try again or contact us directly via email.');
-                    
+
                     // Re-enable submit button
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Submit Order Request';

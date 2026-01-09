@@ -1,8 +1,8 @@
 // Amazon Portfolio Images Configuration
 // Add your image filenames to this array
 const amazonImages = [
-    'CLG3.jpg',
     'CLG1.jpg',
+    'CLG3.jpg',
     'CLG2.jpg'
 ];
 
