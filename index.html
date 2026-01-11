@@ -48,6 +48,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="testimonials.js"></script>
     <script type="module" src="i18n.js"></script>
@@ -391,17 +393,17 @@
                                     d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
-                        <div class="dropdown-menu">
-                            <a data-i18n="services.label" onclick="openOrderModal(event)">Package Label Design</a>
-                            <a data-i18n="services.listing" onclick="openOrderModal(event)">Amazon Listing Design</a>
-                            <a data-i18n="services.ebc" onclick="openOrderModal(event)">Amazon EBC and A+ Premium
+                        <div class="dropdown-menu cursor-pointer">
+                            <a data-i18n="services.label" data-service="label-design" onclick="openOrderModal(event, 'label-design')">Package Label Design</a>
+                            <a data-i18n="services.listing" data-service="listing-design" onclick="openOrderModal(event, 'listing-design')">Amazon Listing Design</a>
+                            <a data-i18n="services.ebc" data-service="a-plus-listing" onclick="openOrderModal(event, 'a-plus-listing')">Amazon EBC and A+ Premium
                                 Listing</a>
-                            <a data-i18n="services.ppc" onclick="openOrderModal(event)">Amazon PPC Management
+                            <a data-i18n="services.ppc" data-service="ppc" onclick="openOrderModal(event, 'ppc')">Amazon PPC Management
                                 Optimization</a>
-                            <a data-i18n="services.setup" onclick="openOrderModal(event)">Product Setup</a>
-                            <a data-i18n="services.optimization" onclick="openOrderModal(event)">Listing
+                            <a data-i18n="services.setup" data-service="product-setup" onclick="openOrderModal(event, 'product-setup')">Product Setup</a>
+                            <a data-i18n="services.optimization" data-service="listing-optimization" onclick="openOrderModal(event, 'listing-optimization')">Listing
                                 Optimization</a>
-                            <a data-i18n="services.storefront" onclick="openOrderModal(event)">Storefront
+                            <a data-i18n="services.storefront" data-service="storefront" onclick="openOrderModal(event, 'storefront')">Storefront
                                 Maintenance</a>
                         </div>
                     </div>
@@ -466,16 +468,16 @@
                             </svg>
                         </button>
                         <div id="mobileServicesMenu" class="mobile-dropdown-menu">
-                            <a onclick="openOrderModal(event)" data-i18n="services.label">Package Label Design</a>
-                            <a onclick="openOrderModal(event)" data-i18n="services.listing">Amazon Listing Design</a>
-                            <a onclick="openOrderModal(event)" data-i18n="services.ebc">Amazon EBC and A+ Premium
+                            <a onclick="openOrderModal(event, 'label-design')" data-service="label-design" data-i18n="services.label">Package Label Design</a>
+                            <a onclick="openOrderModal(event, 'listing-design')" data-service="listing-design" data-i18n="services.listing">Amazon Listing Design</a>
+                            <a onclick="openOrderModal(event, 'a-plus-listing')" data-service="a-plus-listing" data-i18n="services.ebc">Amazon EBC and A+ Premium
                                 Listing</a>
-                            <a onclick="openOrderModal(event)" data-i18n="services.ppc">Amazon PPC Management
+                            <a onclick="openOrderModal(event, 'ppc')" data-service="ppc" data-i18n="services.ppc">Amazon PPC Management
                                 Optimization</a>
-                            <a onclick="openOrderModal(event)" data-i18n="services.setup">Product Setup</a>
-                            <a onclick="openOrderModal(event)" data-i18n="services.optimization">Listing
+                            <a onclick="openOrderModal(event, 'product-setup')" data-service="product-setup" data-i18n="services.setup">Product Setup</a>
+                            <a onclick="openOrderModal(event, 'listing-optimization')" data-service="listing-optimization" data-i18n="services.optimization">Listing
                                 Optimization</a>
-                            <a href="#portfolio" data-i18n="services.storefront">Storefront Maintenance</a>
+                            <a onclick="openOrderModal(event, 'storefront')" data-service="storefront" data-i18n="services.storefront">Storefront Maintenance</a>
                         </div>
                     </div>
                     <a href="https://wa.me/00905056779458" target="_blank"
@@ -1189,31 +1191,14 @@
                         </div>
 
                         <div class="space-y-6">
-                            <!-- Email -->
-                            <div class="space-y-2">
-                                <div class="flex items-center space-x-3">
-                                    <span class="text-accent text-3xl">📧</span>
-                                    <p class="text-white text-lg font-semibold" data-i18n="order.email">Email</p>
-                                </div>
-                                <p class="text-white text-lg">info@njbldesign.com</p>
-                            </div>
-
-                            <!-- Phone -->
-                            <div class="space-y-2">
-                                <div class="flex items-center space-x-3">
-                                    <span class="text-accent text-3xl">📱</span>
-                                    <p class="text-white text-lg font-semibold" data-i18n="order.phone">Phone</p>
-                                </div>
-                                <p class="text-white text-lg">+90 (505) 677 9458</p>
-                            </div>
-
-                            <!-- WhatsApp -->
-                            <div class="space-y-2">
-                                <div class="flex items-center space-x-3">
-                                    <span class="text-accent text-3xl">💬</span>
-                                    <p class="text-white text-lg font-semibold" data-i18n="order.whatsapp">WhatsApp</p>
-                                </div>
-                                <p class="text-white text-lg">+90 (505) 677 9458</p>
+                            <!-- Text -->
+                            <div class="space-y-4">
+                                <p class="text-white text-lg leading-relaxed">
+                                    Thank you for taking the time to share details about your project. This form helps me understand your needs clearly and deliver the best possible results.
+                                </p>
+                                <p class="text-white text-lg leading-relaxed">
+                                    Please briefly describe your project, including the type of design you need, your goals, target audience, preferred style or references, required deliverables, timeline, and budget. Any additional details that can help me better understand your vision are appreciated.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1238,7 +1223,7 @@
                             <div>
                                 <label class="block text-white text-sm font-medium mb-2"
                                     data-i18n="order.form.service">Service Needed *</label>
-                                <select name="service" required
+                                <select id="serviceSelect" name="service" required
                                     class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 focus:border-accent focus:outline-none text-white">
                                     <option value="" data-i18n="order.form.service.select">Select a service</option>
                                     <option value="label-design" data-i18n="order.form.service.label">Package Label
@@ -1249,6 +1234,7 @@
                                         Premium Listing</option>
                                     <option value="ppc" data-i18n="order.form.service.ppc">Amazon PPC Management
                                         Optimization</option>
+                                    <option value="product-setup" data-i18n="order.form.service.setup">Product Setup</option>
                                     <option value="listing-optimization" data-i18n="order.form.service.optimization">
                                         Listing Optimization</option>
                                     <option value="storefront" data-i18n="order.form.service.storefront">Storefront
@@ -1589,10 +1575,18 @@
         const closeModal = document.getElementById('closeModal');
 
         // Function to open order modal
-        function openOrderModal(event) {
+        function openOrderModal(event, serviceType) {
             if (event) event.preventDefault();
             orderModal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
+            
+            // Set the service dropdown if serviceType is provided
+            if (serviceType) {
+                const serviceSelect = document.getElementById('serviceSelect');
+                if (serviceSelect) {
+                    serviceSelect.value = serviceType;
+                }
+            }
         }
 
         // Function to scroll to top
@@ -1642,8 +1636,21 @@
                 .then(function (response) {
                     console.log('SUCCESS!', response.status, response.text);
 
-                    // Show success message
-                    alert('✅ Order request sent successfully! We will contact you soon.');
+                    // Show success message with SweetAlert2
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Order request sent successfully! We will contact you soon.',
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 4000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    });
 
                     // Reset form
                     orderForm.reset();
@@ -1659,8 +1666,21 @@
                 }, function (error) {
                     console.error('FAILED...', error);
 
-                    // Show error message
-                    alert('❌ Failed to send order request. Please try again or contact us directly via email.');
+                    // Show error message with SweetAlert2
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error!',
+                        text: 'Failed to send order request. Please try again or contact us directly via email.',
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 5000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                            toast.addEventListener('mouseenter', Swal.stopTimer)
+                            toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    });
 
                     // Re-enable submit button
                     submitBtn.disabled = false;
